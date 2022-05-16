@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+body{
+    font-family: 'Almarai', sans-serif;  /* type of font */
+}
+.product-item{
+    border: 1px solid rgb(219, 219, 219);
+}
+.product-img{
+    position: relative;
+    overflow: hidden;
+}
+.btns{
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    font-size: 15px;
+    font-weight: 300;
+    transition: all 0.3s ease-in-out;
+}
+.btns button{
+    border: none;
+    background-color: rgb(39, 39, 39);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.btns button:hover{
+    color: #22c722;
+}
+.product-img:hover .btns{
+    bottom: 0;
+}
+
+.heart-icon{
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    font-size: 18px;
+}
+
+.product-type{
+    font-size: 13px;
+    opacity: 0.8;
+}
+.product-name{
+    transition: all 0.3s ease-in-out;
+}
+.product-name:hover{
+    color: #22c722!important;
+}
+.product-price{
+    color:#22c722;
+}
+.rating{
+    font-size: 13px;
+}
+.product-item{
+    width: 210px;
+    direction: rtl;
+}
+
+
+/*start navbar*/
+
+
+@media all and (min-width: 992px) {
+	.navbar .dropdown-menu-end{ right:0; left: auto;  }
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+}
+
+.navbar .items li{
+
+    padding-left: 30px;
+}
+
+.navbar .nav-item .drop{
+
+    padding-right: 100px;
+}
+
+
+.navbar{
+    background: #212529;
+}
+
+.scrolled{
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.navbar .navbar-brand{
+    font-size: 30px;
+
+}
+
+
+.navbar .navbar-brand span{
+    color: sandybrown;
+}
+
+
+
+
+
+/*end navbar*/
+
+
+
+/*-------------------------------Basket section----------------------*/
+
+
+
+
+.table-responsive{
+    direction: rtl;
+}
+
+.btn-danger{
+    width: 50px;
+}
