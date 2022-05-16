@@ -72,7 +72,6 @@ article {
   width: 20%;
   height: auto;
   float: right;
-  background-color: red;
   text-decoration: underline;
   color: #00970B;
   cursor: pointer;
@@ -80,3 +79,36 @@ article {
   height: content; }
   article:hover {
     transform: scale(1.1); }
+
+#footer {
+  color: white;
+  padding: 3rem 0;
+  background-color: #020202;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+#footer h5 {
+  font-size: 1.875rem;
+  margin: 1rem 0; }
+
+#footer hr {
+  width: 4%;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-top: none; }
+
+#footer h6 {
+  font-size: 1rem;
+  margin: 0.5rem 0; }
+
+#footer #Social-icons {
+  padding: 0.75rem 0; }
+
+#footer #Social-icons img {
+  width: 2.25rem;
+  padding: 0 0.4rem;
+  transition: all .5s; }
+
+#footer #Social-icons img:hover {
+  transform: scale(1.5); }
