@@ -39,7 +39,7 @@ header {
 label {
   margin-bottom: 1vh; }
 
-.form-select {
+#selectSex {
   width: 30%;
   margin-right: 2vh;
   margin-bottom: 2vh;
@@ -68,14 +68,15 @@ h4 {
   border-top: 1px solid white;
   padding: 10px; }
 
-footer {
+article {
   width: 20%;
   height: auto;
   float: right;
+  background-color: red;
   text-decoration: underline;
   color: #00970B;
   cursor: pointer;
   transition: all .1s;
   height: content; }
-  footer:hover {
+  article:hover {
     transform: scale(1.1); }
