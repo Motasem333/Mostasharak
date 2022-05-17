@@ -60,6 +60,8 @@
                 document.getElementById("Get1").addEventListener("click",code);
                 function code()
                 {
+                    document.getElementById("Get0").style.display = "initial";
+                    document.getElementById("cancel").style.display = "initial";
                 if (Prp <500){
                     document.getElementById("Get0").innerHTML = "لم يتم الحصول على عدد نقاط كافي"
                     document.getElementById("Get0").style.marginRight = "3vh";   
@@ -70,5 +72,14 @@
                     }
                     document.getElementById('Get0').innerHTML = getRndInteger(111111,999999)
                     document.getElementById("Get0").style.marginRight = "3vh";
+                    document.getElementById("Get1").setAttribute('disabled', 'disabled')
                 }
+                }
+
+                document.getElementById("cancel").addEventListener("click",cancel);
+                function cancel()
+                { 
+                    document.getElementById("Get0").style.display = "none";
+                    document.getElementById("cancel").style.display = "none";
+                    document.getElementById("Get0").style.marginRight = "-40vh";
                 }
