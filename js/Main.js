@@ -1,3 +1,5 @@
+
+
 /*
                 let Buttons = ["Done","Done1","Done2","Done3"]
                 function PrGo (arr){
@@ -7,8 +9,8 @@
                     }
                 }
                 PrGo(Butt)*/
-                let Pr = document.getElementById("progress-bar")
-                Prw = Pr.style.width
+                let Pr = document.getElementsByClassName("progress-bar");
+                Prw = Pr.style.width;
                 console.log(Prw);
                 function m(str){
 
@@ -32,30 +34,7 @@
                 }
 
 
-                document.getElementById("Done1").addEventListener("click",done1);
-                function done1()
-                { 
-                    console.log("Ahmed");    
-                    Prp = parseInt(Prp)
-                    Prp+=parseInt(8)
-                    document.getElementById("points").innerHTML = Prp
-                    Pr.style.width = Prp+'px';
-                    console.log(Prp);             
-                    document.getElementById("Done1").setAttribute('disabled', 'disabled')  ;
-                }
-
-
-                document.getElementById("Done2").addEventListener("click",done2);
-                function done2()
-                { 
-                    console.log("Ahmed");
-                    Prp = parseInt(Prp)
-                    Prp+=parseInt(8)
-                    document.getElementById("points").innerHTML = Prp
-                    Pr.style.width = Prp+'px';
-                    console.log(Prp); 
-                    document.getElementById("Done2").setAttribute('disabled', 'disabled')  ;
-                }
+               
 
                 document.getElementById("Get1").addEventListener("click",code);
                 function code()

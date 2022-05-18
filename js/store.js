@@ -45,3 +45,18 @@ for (var i = 0; i < removeCartItem.length; i++){
         buttonClicked.parentNode.parentNode.parentNode.removeChild(buttonClicked.parentNode.parentNode);
     })
 }
+
+
+/*add to cart*/
+var carts = document.querySelectorAll('.add-to-cart')
+for (let i =0; i < carts.length; i++){
+    carts[i].addEventListener('click' , function(event) {
+        cartNumbers()
+    })
+}
+
+
+function cartNumbers () {
+
+    localStorage.setItem('cartNumbers',1);
+}
