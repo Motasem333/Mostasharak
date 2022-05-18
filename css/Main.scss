@@ -38,7 +38,7 @@
     direction: rtl;
     background-color:   #00970B;
       margin-top: 10vh;
-      height: 200vh;
+      height: 185vh;
       box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
       .head{
@@ -123,3 +123,23 @@
 
 
     }
+
+
+    .Sec2 {
+      direction: rtl;
+    background-color:   #00970B;
+      margin-top: 10vh;
+      height: 50vh;
+      box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+#myChart {
+  background-color: white;
+  width: 70%;
+  height: 90%;
+  float: left;
+  margin: 35px auto;
+}
+
