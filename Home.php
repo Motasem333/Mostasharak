@@ -31,13 +31,13 @@
 
     <div class=" col-lg-8  mt-5">
               
-      <form class="center-block" action="loginbke.php" method="POST" role="form" >
+      <form class="center-block" action="loginbke.php" formaction="main1.php" method="POST" role="form" >
         <h2 class="text-center">تسجيل <span>دخول</span> الآن</h2>
       
       <input  class="form-control" type="text" name="Email" placeholder="Email" required>
       <input  class="form-control" type="password" name="password" placeholder="Password" required>
-      <input  class="btn1 btn btn-block" type="submit" value="ابدأ الآن">
-      <input  class="btn2 btn btn-block" type="submit" value="دخول كضيف">
+      <input  class="btn1 btn btn-block" type="submit"  id="Home" value="ابدأ الآن">
+      <input  class="btn2 btn btn-block" type="submit" value ="دخول كضيف">
       <p class="pt-3 float-end ">لانشاء حساب  <a href="signup.html">اضغط هنا</a></p>
       
   
@@ -304,8 +304,6 @@
   cursorwidth:"16px",
 });</script>
 -->
-<script src="js/wow.min.js"></script>
-<script>new WOW().init();</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="js/home.js"></script> <!--scroll to top-->
 
