@@ -1,3 +1,5 @@
+<!DOCTYPE HTML>
+
 <?php 
 
 $servername = "localhost";
@@ -11,16 +13,22 @@ die("Connection failed) ". mysqli_connect_error());
 }
 
 else {
-	$select_data_user = "select  meal_name,meal_pic,calories,perfect_meal,meal_time from meal";
+	$day = time();
+	$time1= strtotime("18-05-2022");
+    $d = $day - $time1;
+    $c= round($d/(60*60*24))+3;	
+	$select_data_user = "select meal_name,meal_pic,calories,perfect_meal,meal_time,day from meal limit 3 offset $c";
 	$run_select = mysqli_query($conn,$select_data_user);
 	$run_num = mysqli_num_rows($run_select);
 
 }
-?>
 
+?>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
+		<script src = "./js/Main.js"/>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
@@ -61,22 +69,22 @@ else {
                                 <th>مكونات الوجبة&nbsp;</th>
                                 <th>السعرات الحراية</th>
                                 <th>الوجبة المثالية</th>
-                                <th>الانجاز اليومي</th>
                             </tr>
                         </thead>
                         <tbody>  
                         <?php
 						if ( $run_num > 0){
 						while($row = mysqli_fetch_assoc($run_select)){
-						echo "<tr>";
+						  echo "<tr>";									
                                 echo "<td> "."<b>".$row['meal_time']."</b>"."</td>";
                                 echo "<td>".$row['meal_name']."</td>";
 								echo "<td>".$row['calories']."</td>";
-                                echo "<td>".'<img src="data:image;base64,'.base64_encode($row['meal_pic']).'alt="image" style="width:100; height:100;"/>' ."</td>";
+                               // echo "<td>".'<img src="data:image;base64,'.base64_encode($row['meal_pic']).'alt="image" style="width:100; height:100;"/>' ."</td>";
+								echo "<td>".$row['perfect_meal']."</td>";
 								
-								
-                                echo '<td>.&nbsp;<button class="btn btn-success btn-lg" id="Done">انتهيت</button></td>' ;
                            echo "</tr>";
+							
+							
 							
 						}
 						} 
@@ -85,19 +93,18 @@ else {
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";
-                             echo '<td>.&nbsp;<button class="btn btn-success btn-lg" id="Done">فارغ</button></td>' ;
+            
 							
 						}
 						
 						?>
 						</tbody>						
                        </table>
-					  
+					  <div > <button class="btn btn-success bg-white text-success btn-lg " style="width:50vh ; Margin-right:50vh; Margin-top:7vh " id="Done">الانتهاء من الوجبات اليومية</button> </div>
                     <div class="Pr">
                         <h3>ألانجاز العام</h3>
                         <div class="progress">
-                            <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0"
-                            aria-valuemin="0" aria-valuemax="1500" style="width:499px">
+                            <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1500" style="width:499px">
                             </div>
                           </div>
                           <div class="Prpoint">
@@ -120,6 +127,3 @@ else {
     
 </body>
 </html>
-
-
-<script src="js/Main.js"></script>
