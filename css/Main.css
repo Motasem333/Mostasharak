@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
 @keyframes Welcome {
   0% {
     opacity: .1; }
@@ -41,7 +40,7 @@ header {
   direction: rtl;
   background-color: #00970B;
   margin-top: 10vh;
-  height: 185vh;
+  height: 200vh;
   box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   .Sec1 .head {
     color: white;
@@ -92,24 +91,75 @@ header {
     .Sec1 #Get1:hover, .Sec1 #Get2:hover {
       padding: 10px;
       color: green; }
-  .Sec1 #Get0 {
+  .Sec1 #Get0, .Sec1 #Get02 {
     margin-right: -40vh;
     transition: all .2s; }
-  .Sec1 #cancel {
+  .Sec1 #cancel, .Sec1 #cancel2 {
     border-radius: 5px;
     width: 6vh;
     height: 6vh; }
 
 .Sec2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  direction: rtl;
+  background-color: transparent;
+  margin-top: 10vh;
+  height: 50vh; }
+  .Sec2 #Icon_hover {
+    transition: all .3s; }
+    .Sec2 #Icon_hover:hover {
+      transform: scale(1.1); }
+  .Sec2 .counter-section i {
+    display: block;
+    margin: 0 0 10px; }
+  .Sec2 .counter-section span.counter {
+    font-size: 40px;
+    line-height: 60px;
+    display: block;
+    font-family: "Oswald",sans-serif;
+    letter-spacing: 2px; }
+  .Sec2 .counter-title {
+    font-size: 12px;
+    text-transform: uppercase; }
+  .Sec2 .counter-icon {
+    top: 25px;
+    position: relative; }
+  .Sec2 .counter-style2 .counter-title {
+    float: left; }
+  .Sec2 .counter-style2 span.counter {
+    float: left;
+    margin-right: 10px; }
+  .Sec2 .counter-style2 i {
+    float: right;
+    line-height: 26px;
+    margin: 0 10px 0 0; }
+  .Sec2 .counter-subheadline span {
+    float: right; }
+  .Sec2 .medium-icon {
+    font-size: 40px !important;
+    margin-bottom: 15px !important; }
+
+.Sec3 {
+  display: flex;
+  justify-content: space-around;
   direction: rtl;
   background-color: #00970B;
-  margin-top: 10vh;
+  margin-top: 0vh;
   height: 50vh;
   box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-
-#myChart {
-  background-color: white;
-  width: 70%;
-  height: 90%;
-  float: left;
-  margin: 35px auto; }
+  .Sec3 .Dailytopic1, .Sec3 .Dailytopic2 {
+    width: 35%;
+    height: 75%;
+    text-align: center;
+    background-color: white;
+    color: #00970B;
+    margin: auto;
+    border-radius: 10px;
+    transition: all .3s; }
+    .Sec3 .Dailytopic1 h1, .Sec3 .Dailytopic1 p, .Sec3 .Dailytopic2 h1, .Sec3 .Dailytopic2 p {
+      margin-top: 5vh;
+      text-align: center; }
+    .Sec3 .Dailytopic1:hover, .Sec3 .Dailytopic2:hover {
+      transform: scale(1.2); }
