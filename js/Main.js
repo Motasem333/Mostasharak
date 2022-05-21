@@ -1,3 +1,20 @@
+$(document).ready(function() {
+
+    $('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+    Counter: $(this).text()
+}, {
+    duration: 4000,
+    easing: 'swing',
+    step: function (now) {
+        $(this).text(Math.ceil(now));
+    }
+});
+}); 
+
+});  
+
+
 
 
 /*
@@ -9,13 +26,12 @@
                     }
                 }
                 PrGo(Butt)*/
-                let Pr = document.getElementsByClassName("progress-bar");
+                let Pr = document.getElementById("progress-bar");
                 Prw = Pr.style.width;
                 console.log(Prw);
                 function m(str){
-
-                    var match = str.match(/(\d+)/);
-                    return match[0]
+                var match = str.match(/(\d+)/);
+                 return match[0]
                 }
                 console.log(m(Prw));
 
@@ -51,10 +67,37 @@
                     }
                     document.getElementById('Get0').innerHTML = getRndInteger(111111,999999)
                     document.getElementById("Get0").style.marginRight = "3vh";
-                    document.getElementById("Get1").setAttribute('disabled', 'disabled')
+                    document.getElementById("Get1").setAttribute('disabled', 'disabled')    
+                }
+                }
+                
+
+                document.getElementById("Get2").addEventListener("click",code2);
+                function code2()
+                {
+                    document.getElementById("Get02").style.display = "initial";
+                    document.getElementById("cancel2").style.display = "initial";
+                if (Prp <1000){
+                    document.getElementById("Get02").innerHTML = "لم يتم الحصول على عدد نقاط كافي"
+                    document.getElementById("Get02").style.marginRight = "3vh";   
+                }
+                if (Prp >1000){
+                    function getRndInteger(min, max) {
+                    return Math.floor(Math.random() * (max - min)) + min;
+                    }
+                    document.getElementById('Get02').innerHTML = getRndInteger(111111,999999)
+                    document.getElementById("Get02").style.marginRight = "3vh";
+                    document.getElementById("Get2").setAttribute('disabled', 'disabled')    
                 }
                 }
 
+                document.getElementById("cancel2").addEventListener("click",cancel2);
+                function cancel2()
+                { 
+                    document.getElementById("Get02").style.display = "none";
+                    document.getElementById("cancel2").style.display = "none";
+                    document.getElementById("Get02").style.marginRight = "-40vh";
+                }
                 document.getElementById("cancel").addEventListener("click",cancel);
                 function cancel()
                 { 
@@ -62,3 +105,4 @@
                     document.getElementById("cancel").style.display = "none";
                     document.getElementById("Get0").style.marginRight = "-40vh";
                 }
+                

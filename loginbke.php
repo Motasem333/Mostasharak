@@ -18,7 +18,7 @@ else{
     $rows = mysqli_num_rows($run);
 	  if ( $rows == 1){
 		  
-           header('location:main.php');
+           header('location:main1.php');
 		  }
      else {
     	 echo "inncorect username or password!";

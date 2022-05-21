@@ -1,3 +1,4 @@
+
 @keyframes Welcome {
     0%{opacity: .1;}
     100%{opacity: .9;}
@@ -109,12 +110,12 @@
           color: green;
         }
       }
-      #Get0{
+      #Get0,#Get02{
         
         margin-right: -40vh;
         transition: all .2s;
       }
-      #cancel {
+      #cancel,#cancel2 {
         border-radius: 5px;
         width: 6vh;
         height: 6vh;
@@ -123,3 +124,72 @@
 
 
     }
+
+
+    .Sec2 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      direction: rtl;
+      //color: #00970B;
+    background-color:  transparent;
+      margin-top: 10vh;
+      height: 50vh;
+      //box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      #Icon_hover{
+        transition: all .3s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+
+      .counter-section i { display:block; margin:0 0 10px}
+      .counter-section span.counter { font-size:40px;  line-height:60px; display:block; font-family: "Oswald",sans-serif; letter-spacing: 2px}
+      .counter-title{ font-size:12px;  text-transform: uppercase}
+      .counter-icon {top:25px; position:relative}
+      .counter-style2 .counter-title { float: left;}
+      .counter-style2 span.counter { float: left; margin-right: 10px;}
+      .counter-style2 i {float: right; line-height: 26px; margin: 0 10px 0 0}
+      .counter-subheadline span {float: right;}  
+      
+      .medium-icon {
+          font-size: 40px !important;
+          margin-bottom: 15px !important;
+      } 
+      
+    
+  }
+
+
+
+  .Sec3{
+    display: flex;
+    justify-content: space-around;
+    direction: rtl;
+  background-color:  #00970B;
+    margin-top: 0vh;
+    height: 50vh;
+    box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .Dailytopic1,.Dailytopic2 {
+      width: 35%;
+      height: 75%;
+      text-align: center;
+      background-color: white;
+      color:  #00970B;
+      margin: auto;
+      border-radius: 10px;
+      transition: all .3s;
+      h1 , p {
+        margin-top: 5vh;
+        text-align: center;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+  }
+
