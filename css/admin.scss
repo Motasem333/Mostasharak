@@ -39,35 +39,112 @@
     direction: rtl;
     background-color:   #00970B;
       margin-top: 10vh;
-      height: 200vh;
       box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
       .head{
         color: white;
         padding-right: 5vh;
-        padding-top: 5vh;
+        padding-top: 1vh;
     }
 
-    .admin_services {
-        margin-top: 5vh;
-        margin: auto;
+    .edit_section {
+        padding: 10px;
+        height: auto;
+        width: 70%;
         background-color: white;
-        width: 80%;
         border-radius: 10px;
-        height: 40vh;
+        margin: auto;
+        margin-top: 5vh;
+    }
+    .Result {
+        margin: auto;
+        margin-top: 5vh;
+        width: 80%;
+        height: auto;
+        background-color: white;
+        table {
+            border-radius: 10px;
+            width: 100%;
+			border:1px solid #00970b;
+			border-collapse:collapse;
+			padding:5px;
+		}
+		table th {
+			border:1px solid #00970b;
+			padding:5px;
+			background: #ffffff;
+			color: #313030;
+		}
+		table td {
+			border:1px solid #00970b;
+			text-align:center;
+			padding:5px;
+			background: #ffffff;
+			color: #000000;
+		}
 
-    .admin_services1 ,{
-        width: 100%;
-        height: 50%;
-        display: flex;
-        justify-content: space-around;
-        button {
-            font-size: 2rem;
-            padding: 20px;
-            width: 40%;
-            margin-top: 2vh;
-            height: 70%;
-        }
-    }    
+
+
     }
   }
+
+
+  .Sec2 {
+    direction: rtl;
+    background-color:   #00970B;
+      margin-top: 10vh;
+      box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      height: 80vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .Product , .Meal , .Workout {
+          margin: auto;
+          background-color: white;
+          height: 90%;
+          width: 30%;
+        h1{
+            color: #00970B;
+            text-align: center;
+        }
+
+        .form {
+            text-align: center;
+            label {
+                margin-top: 3vh;
+                margin-bottom: 2vh;
+            }
+            
+        }
+      }
+  }
+
+  .Sec3 {
+    direction: rtl;
+    background-color:   #00970B;
+      margin-top: 10vh;
+      box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      height: 60vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .head{
+        color: white;
+        padding-right: 5vh;
+        padding-top: 5vh;
+        width: 90%;
+    }
+    }
+
+
+.Sec4 {
+    direction: rtl;
+    background-color:   #00970B;
+      margin-top: 10vh;
+      box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      height: 30vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+}

@@ -1,0 +1,63 @@
+             <div class="edit_section" style="" >
+                        <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الاسم الاول : </label>
+                        <input type="text"  id="name" class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                        <button type="button"  class="btn btn-outline-success bg-white"  onclick="editName()">تعديل</button>
+
+                        <label for="" style=" margin-top: 5vh ; margin-right: 5vh;">اسم العائلة : </label>
+                        <input type="text" id="Lname"  class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                        <button type="button" id="edit2" class="btn btn-outline-success bg-white" onclick="editL_Name()">تعديل</button>
+
+                        <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">العمر :  </label>
+                        <input type="number" id="age"  class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                        <button type="button" id="edit3" class="btn btn-outline-success bg-white"  onclick="editAge()">تعديل</button>
+
+                        <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">رقم الهاتف :  </label>
+                        <input type="tel"  id="tel" class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                        <button type="button" id="edit4" class="btn btn-outline-success bg-white"  onclick="edittel()">تعديل</button>
+
+                        <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الوزن :  </label>
+                        <input type="number" id="wieght" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                        <button type="button"  id="edit5" class="btn btn-outline-success bg-white" onclick="editWieght()">تعديل</button>
+
+                        <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الطول :  </label>
+                        <input type="number"  id="height" class="form-control rounded d-inline" style="width:28.5%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                        <button type="button" id="edit6"  class="btn btn-outline-success bg-white" onclick="editHeight()">تعديل</button>
+
+
+
+
+
+
+
+function editName (){
+    document.getElementById("name").disabled = false;
+    document.getElementById("name").removeAttribute( "value" );
+
+}
+function editL_Name (){
+    document.getElementById("Lname").disabled = false;
+    document.getElementById("Lname").removeAttribute( "value" );
+
+}
+function editAge (){
+    document.getElementById("age").disabled = false;
+    document.getElementById("age").removeAttribute( "value" );
+
+}
+function edittel (){
+    document.getElementById("tel").disabled = false;
+    document.getElementById("tel").removeAttribute( "value" );
+
+}
+function editWieght (){
+    document.getElementById("wieght").disabled = false;
+    document.getElementById("wieght").removeAttribute( "value" );
+
+}
+
+function  editHeight(){
+    document.getElementById("height").disabled = false;
+    document.getElementById("height").removeAttribute( "value" );
+
+}
+

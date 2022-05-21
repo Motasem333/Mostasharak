@@ -31,29 +31,168 @@
             <h4 class="alert-heading" style="direction:rtl; float:start"> المسؤول المسجل حاليا : احمد</h4>
         </div>
 
-            <div class="Sec1" style="margin-top:2vh ;  height: 80vh; ">
+            <div class="Sec1" style="margin-top:2vh ;  height: auto; padding-bottom: 10px; ">
                 <div class="head">
-                    <h1 style="margin-bottom:5vh">  الخدمات الخاصة بالمسؤول</h1>
+                    <h1 style="margin-bottom:5vh"> خدمات المستخدمين</h1>
+                    <h3 style="margin-bottom:5vh"> - بحث خاص </h3>
+                    <div class="input-group"  style="width:40%; ">
+                        <input type="email"  class="form-control rounded" placeholder="البريد الالكتروني الخاص بالمستخدم" aria-label="Search" aria-describedby="search-addon" />
+                        <button type="submit" class="btn btn-outline-success bg-white">ابحث</button>
+                      </div>
                 </div>
 
-                <div class="admin_services">
-                    <div class="admin_services1">
-                        <button type="button" class="btn btn-success">تعديل على مستخدم</button>
-                        <button type="button" class="btn btn-success">تعديل على منتج</button>
-                    </div>
-                    <div class="admin_services1">
-                        <button type="button" class="btn btn-success">بحث عن مستخدم</button>
-                        <button type="button" class="btn btn-success"> نشر اعلان</button>
+                <div class="edit_section" style="" >
+                    <div style="display:flex; justify-content:space-between ; height: 3%;;margin-right: 5vh;">
+                        <label for=""  >الاسم  : </label>
+                        <input type="text"  id="name" class="form-control rounded d-inline" style="width:30%" disabled value="احمد"/>
+                        <label for="" >اسم العائلة : </label>
+                        <input type="text" id="Lname"  class="form-control rounded d-inline" style="width:30%"  disabled  value="احمد"/>
                     </div>
 
-                </div>
+                    <div style="display:flex; justify-content:space-between ; height: 3%; margin-top: 5vh;margin-right: 5vh;">
+                        <label for=""  >العمر :  </label>
+                        <input type="number" id="age"  class="form-control rounded d-inline" style="width:30%"  disabled   value="احمد"/>
+                        <label for="" >رقم الهاتف :  </label>
+                        <input type="tel"  id="tel" class="form-control rounded d-inline" style="width:30%"  disabled   value="احمد"/>
+                    </div>  
+                    
+                    <div style="display:flex; justify-content:space-between ; height: 3%; margin-top: 5vh;margin-right: 3vh;">
+                        <label for=""  >الوزن :   </label>
+                        <input type="number" id="age"  class="form-control rounded d-inline" style="width:30%"  disabled   value="احمد"/>
+                        <label for="" > الطول :   </label>
+                        <input type="text"  id="tel" class="form-control rounded d-inline" style="width:30%"  disabled   value="احمد"/>
+                    </div>  
 
-
+                    <div style="display:flex; justify-content:space-between ; height: 3%; margin-top: 5vh;margin-right: 3vh;">
+                        <label for=""  >الجنس :   </label>
+                        <input type="" id="age"  class="form-control rounded d-inline" style="width:30%"  disabled   value="احمد"/>
+                        <label for="" >المرض :   </label>
+                        <input type="text"  id="tel" class="form-control rounded d-inline" style="width:30%"  disabled   value="احمد"/>
+                    </div>  
             </div>
+            <div class="head">
+                <h3 style="margin-bottom:5vh"> - بحث عام</h3>
+                <div class="input-group"  style="width:45%; margin: auto; ">
+                    <select class="form-select" aria-label="Default select example ">
+                        <option selected hidden disabled>المرض</option>
+                        <option value="1">السكري</option>
+                        <option value="2">الضغط</option>
+                        <option value="3">النقرص</option>
+                        <option value="4">سليم من الامراض</option>
+                      </select>
+                      <select class="form-select" aria-label="Default select example" style="margin-right:5vh">
+                        <option selected hidden disabled>الجنس</option>
+                        <option value="1">ذكر</option>
+                        <option value="2">انثى</option>
+                      </select>
+                      <input type="number"  placeholder="العمر" class="form-control rounded d-inline" style="width:33%; margin-right:5vh"  />
+                      <button type="submit" style="margin:auto; width:45%; margin-top: 2vh" class="btn btn-outline-success bg-white">ابحث</button>
+                  </div>
+                  </div>
+                  <div class="Result">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم الاول&nbsp;</th>
+                                <th>اسم العائلة</th>
+                                <th>العمر</th>
+                                <th>الجنس</th>
+                                <th>المرض</th>
+                                <th>الوزن</th>
+                                <th>الطول</th>
+                                <th>البريد الالكتروني</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+<div class="Sec2">
+    
+
+    <div class="Product">
+        <h1>اضافة منتج </h1> 
+        <div class="form">
+                <label for=""  >اسم المنتج :  </label>
+                <input type="text"  class="form-control rounded d-inline" style="width:90%"  value="احمد"/>
+                <br>
+                <label for="" >سعر المنتج : </label>
+                <input type="text"  class="form-control rounded d-inline" style="width:90%"    value="احمد"/>
+                <label for="" >صورة المنتج : </label>
+                <input type="file" class="form-control rounded d-inline" style="width:90%"    value="احمد"/>
+
+                <select class="form-select" aria-label="Default select example" style="width:90% ; margin-top: 5vh;margin-right: 3vh;">
+                    <option selected hidden disabled>نوع المنتج</option>
+                    <option value="1">ملابس</option>
+                    <option value="2">اثقال</option>
+                    <option value="3">يروتين</option>
+                  </select>
+
+                  <button type="submit" style="margin:auto; width:45%; margin-top: 2vh" class="btn btn-success">اضافة</button>
+            </div>
+    </div>
+    <div class="Meal">
+        <h1>اضافة وجبة غذائية</h1>
+        <div class="form">
+            <label for=""  > المكونات : </label>
+            <input type="text"  class="form-control rounded d-inline" style="width:90%"  value="احمد"/>
+            <br>
+            <label for="" >عدد السعرات الحرارية :  </label>
+            <input type="text"  class="form-control rounded d-inline" style="width:90%"    value="احمد"/>
+            <label for="" >الوجبة المثالية :  </label>
+            <input type="file" class="form-control rounded d-inline" style="width:90%"    value="احمد"/>
 
 
 
-            
+              <button type="submit" style="margin:auto; width:45%; margin-top: 2vh" class="btn btn-success">اضافة</button>
+        </div>
+    </div>
+    <div class="Workout">
+        <h1>اضافة تمرين</h1>
+        <div class="form">
+            <label for=""  >اسم التمرين :  </label>
+            <input type="text"  class="form-control rounded d-inline" style="width:90%"  value="احمد"/>
+            <br>
+            <label for="" > التكرار : </label>
+            <input type="text"  class="form-control rounded d-inline" style="width:90%"    value="احمد"/>
+             <button type="submit" style="margin:auto; width:45%; margin-top: 2vh" class="btn btn-success">اضافة</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="Sec3">
+    <div class="head">
+        <h1 style="margin-bottom:5vh"> نشر أعلان</h1>
+
+        <label for=""  >موضوع الاعلان :   </label>
+        <input type="text"  class="form-control rounded d-inline" style="width:50%"  value="احمد"/>
+        <br><br><br>
+        <label for="" style="font-size:1.5rem" >نص الاعلان :   </label>
+        <textarea class="form-control" aria-label="With textarea" style="height:15vh"></textarea>
+        <button type="submit" style="margin-right: 40vh; width:45%; margin-top: 2vh" class="btn btn-outline-success bg-white">نشر الاعلان </button>
+
+    </div>
+
+</div>
+
+
+<div class="Sec4">
+
+
+</div>
                 
 </body>
 </html>
