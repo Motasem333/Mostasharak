@@ -224,3 +224,11 @@ function updateCartTotal(){
     total = Math.round(total * 100) / 100 /* round total number*/
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
+
+
+$(document).ready(function(){
+    $( ".cartt").click(function() {
+      var x = $(window).scrollTop();
+       $(window).scrollTop(x+3000)
+    });
+})

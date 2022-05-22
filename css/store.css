@@ -328,3 +328,13 @@ body{
     background: #22c722;
 }
 
+.cart-button {
+    right: 10px;
+    position: fixed;
+    padding: 20px;
+    z-index: 7777;
+}
+
+.cart-button button {
+    padding: 15px;
+}
