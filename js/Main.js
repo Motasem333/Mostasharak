@@ -10,10 +10,7 @@ $(this).prop('Counter',0).animate({
         $(this).text(Math.ceil(now));
     }
 });
-}); 
-
 });  
-
 
 
 
@@ -24,8 +21,8 @@ $(this).prop('Counter',0).animate({
                         console.log(arr[i]);
                         let Pr = document.getElementById("Done").style.width
                     }
-                }
-                PrGo(Butt)*/
+                }*/
+				
                 let Pr = document.getElementById("progress-bar");
                 Prw = Pr.style.width;
                 console.log(Prw);
@@ -40,9 +37,8 @@ $(this).prop('Counter',0).animate({
                 document.getElementById("Done").addEventListener("click",done);
                 function done()
                 { 
-                    console.log("Ahmed");
                     Prp = parseInt(Prp)
-                    Prp+=parseInt(8)
+                    Prp+=parseInt(24)
                     document.getElementById("points").innerHTML = Prp
                     console.log(Prp);
                     Pr.style.width = Prp+'px';
@@ -104,5 +100,4 @@ $(this).prop('Counter',0).animate({
                     document.getElementById("Get0").style.display = "none";
                     document.getElementById("cancel").style.display = "none";
                     document.getElementById("Get0").style.marginRight = "-40vh";
-                }
-                
+                }})

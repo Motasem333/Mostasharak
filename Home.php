@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
   <title>Home</title>
@@ -24,7 +27,7 @@
 
   </div>
   
-  
+
 
 <div class="container">
   <div class="row justify-content-end">
@@ -32,19 +35,20 @@
     <div class=" col-lg-8  mt-5">
               
       <form class="center-block" action="loginbke.php" formaction="main1.php" method="POST" role="form" >
-        <h2 class="text-center">تسجيل <span>دخول</span> الآن</h2>
-      
+	  <h2 class="text-center">تسجيل <span>دخول</span> الآن</h2>
+      <h3 style='margin-left:5vh; color:red; font-size:1.12rem'><?php if(isset($_SESSION['user_not_valid']) ){echo $_SESSION['user_not_valid'];}?><h3>
+
       <input  class="form-control" type="text" name="Email" placeholder="Email" required>
       <input  class="form-control" type="password" name="password" placeholder="Password" required>
       <input  class="btn1 btn btn-block" type="submit"  id="Home" value="ابدأ الآن">
-      <input  class="btn2 btn btn-block" type="submit" value ="دخول كضيف">
+	  <a href="guest.html"  ><input  class="btn2 btn btn-block" value ="دخول كضيف"></a>
+
       <p class="pt-3 float-end ">لانشاء حساب  <a href="signup.html">اضغط هنا</a></p>
-      
-  
+
     </form>
 
    </div>
-    
+
       
      <div class=" name col-lg-3 pt-5 ">
        <p class="float-end ">مرحبا بك في</p>
@@ -88,8 +92,9 @@
   <div class="row" >
         <div class="col-lg-6 text-black ">
           <h2>اعرف اكثر</h2>
+		  <p>مستشارك هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات التي من شأنها أن تساعد في توفير الوقت والطاقة والمال من خلال توفير المعلومات الأساسية من المستخدم ، وهذا سيفتح الكثير من الخيارات للعملاء بما في ذلك ، الحمية ، والتمارين ، والوصفات ، والترقيات الصالة الرياضية
+ومخازن البروتين بالإضافة إلى الكثير</P>
       
-      <p>دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛ حيث تشمل المقالات جميع الجوانب المختلفة لأنواع المعرفة الإنسانية، وهي مكتوبة بلغة عربية ومبسّطة لتُساعد مستخدمي الإنترنت في جميع أنحاء العالم</p>
     </div>
 
     <div class="  col-lg-6 ">
@@ -121,7 +126,7 @@
           <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="0.5s">
           <i class="fa-solid fa-stopwatch fa-shake fa-3x"></i>
           <div>
-            <p class="pt-4">دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛</p>
+            <p class="pt-4">المساعده على لعب التمارين بالشكل الصحيح </p>
           </div>
         </div>
     </div>
@@ -132,7 +137,7 @@
         <i class="fa-solid fa-bell fa-3x"></i>
 
         <div>
-          <p class="pt-4">دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛</p>
+          <p class="pt-4">متجر يضم العديد من الاشياء التي تخص الحياه الصحيه </p>
         </div>
       </div>
       </div>
@@ -142,7 +147,7 @@
         <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="1.5s">
           <i class="fa-solid fa-money-bill-wave fa-3x"></i>
           <div>
-            <p class="pt-4">دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛</p>
+            <p class="pt-4">قياس الكتله و السعرات الحراريه في الجسم</p>
           </div>
       </div>
       </div>
@@ -153,11 +158,10 @@
         <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="2s">
           <i class="fa-solid fa-money-bill-wave fa-3x"></i>
           <div>
-            <p class="pt-4">دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛</p>
+            <p class="pt-4">  توفير جدول غذائي للمستخدم حسب بياناته الشخصيه</p>
           </div>
       </div>
-      </div>
-     
+      </div> 
       </div>
     </div>
   </div>
@@ -188,22 +192,22 @@
 
     <!-- Right -->
     <div>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.facebook.com/" class="me-4 text-reset">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.twitter.com" class="me-4 text-reset">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.google.com" class="me-4 text-reset">
         <i class="fab fa-google"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.instagram.com" class="me-4 text-reset">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.linkedin.com" class="me-4 text-reset">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.github.com" class="me-4 text-reset">
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -222,8 +226,7 @@
           <h6 class="text-uppercase fw-bold mb-4 ">
             <i class="fas fa-gem me-3"></i>مستشارك
           </h6>
-          <p>
-          يعتبر تمرين المتوازي رائع للغاية في تضخيم وابراز عضلات الترايسبس وأكثر ما يميزه عن غيره هو أنه يمنحك كتلة عضلية ويساعد على تقوية أعصاب الذراعين. وللاستفادة من التمرين بشكل أكبر ، اجعل جسمك عمودياً قدر ا
+          <p>هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات الصحية
           </p>
         </div>
         <!-- Grid column -->
@@ -232,19 +235,14 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            خارطة الموقع
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">صفحة الضيف</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">المتجر</a>
-          </p>
           
           <p>
-            <a href="#!" class="text-reset">مساعدة</a>
+            <a href="guest.html" class="text-reset">صفحة الضيف</a>
           </p>
+          <p>
+            <a href="store.html" class="text-reset" >المتجر</a>
+          </p>
+          
         </div>
         <!-- Grid column -->
 
@@ -257,9 +255,9 @@
           
           <p>
             <i class="fas fa-envelope me-3"></i>
-            info@example.com
+            contact@mostasharak.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-phone me-3"> </i>9999 9999 9627+</p>
           
         </div>
         <!-- Grid column -->
@@ -271,8 +269,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2022 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Mostasharak.com</a>
+   Mostasharak © 2022 
   </div>
   <!-- Copyright -->
 </footer>
@@ -304,7 +301,7 @@
   cursorwidth:"16px",
 });</script>
 -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="js/home.js"></script> <!--scroll to top-->
 
   

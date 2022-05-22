@@ -10,6 +10,8 @@
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
@@ -18,6 +20,27 @@
   </head>
 
   <body>
+        <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
+      <div class="container-fluid">
+       
+       
+       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse " id="main_nav">
+       <ul class="items navbar-nav ms-auto">
+         <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">الصفحة الرئيسية </a> </li>
+		 <li class="nav-item active"> <a class="nav-link" href="signup.html" style="color:white">تسجيل حساب </a> </li>
+
+
+       </ul>
+      
+       </div> <!-- navbar-collapse.// -->
+       <img src="img/logoedit.png" style="height:10vh">
+      </div> <!-- container-fluid.// -->
+     </nav>
+   
+
 
     <div class="container  mx-auto ">
           <header>
@@ -126,14 +149,110 @@
                 </div></div></section>
 
 
-        <section class="Sec3">
+        <section class="Sec3" style="margin-bottom:5vh">
                 <div class="row">
 	              <div class="container">
                 <blockquote class="quote-card green-card"><p> أبدء حياتك الصحية الان وسجل مع مستشارك</p>
-                <button type="button" name="button" class="btn btn-success btn-lg text-success bg-white  " id="2" onclick="getVal();">سجل الان</button>
+                <a href="signup.html"  ><button type="button" name="button" class="btn btn-success btn-lg text-success bg-white  " id="2"  onclick="getVal();">سجل الان</button></a>
                 </blockquote></div></div></section>
         </div>
+<footer class="footer text-center text-lg-start bg-dark text-muted" style="direction:rtl">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>تواصل معنا عبر المنصات الاجتماعية</span>
+    </div>
+    <!-- Left -->
 
+    <!-- Right -->
+    <div>
+      <a href="https://www.facebook.com/" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.twitter.com" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.google.com" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="https://www.instagram.com" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.github.com" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4 ">
+            <i class="fas fa-gem me-3"></i>مستشارك
+          </h6>
+          <p>هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات الصحية
+          </p>
+        </div>
+        <!-- Grid column -->
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          
+          <p>
+            <a href="guest.html" class="text-reset">صفحة الضيف</a>
+          </p>
+          <p>
+            <a href="store.html" class="text-reset" >المتجر</a>
+          </p>
+          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            تواصل معنا
+          </h6>
+          
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            contact@mostasharak.com
+          </p>
+          <p><i class="fas fa-phone me-3"> </i>9999 9999 9627+</p>
+          
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+   Mostasharak © 2022 
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<!--end section our footer-->
+</body>
 
   </body>
 
