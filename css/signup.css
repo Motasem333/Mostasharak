@@ -4,8 +4,6 @@
   100% {
     opacity: .9; } }
 
-::-webkit-scrollbar {
-  width: 10px; }
 
 body {
   animation: Welcome 1s;
