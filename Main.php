@@ -5,7 +5,7 @@
 $servername = "localhost";
 $username = "root";
 $pass = "";
-$database = "mostashark";
+$database = "mostasharak";
 
 $conn = mysqli_connect($servername, $username, $pass,$database);
 if (!$conn) {
@@ -17,8 +17,8 @@ else {
 	$time1= strtotime("18-05-2022");
     $d = $day - $time1;
     $c= round($d/(60*60*24))+3;	
-	$select_data_user = "select meal_name,meal_pic,calories,perfect_meal,meal_time,day from meal limit 3 offset $c";
-	$run_select = mysqli_query($conn,$select_data_user);
+	$select_data_user = "select meal_name,calories,perfect_meal,meal_time,day from meal ";
+    $run_select = mysqli_query($conn,$select_data_user);
 	$run_num = mysqli_num_rows($run_select);
 
 }
@@ -79,7 +79,7 @@ else {
                                 echo "<td> "."<b>".$row['meal_time']."</b>"."</td>";
                                 echo "<td>".$row['meal_name']."</td>";
 								echo "<td>".$row['calories']."</td>";
-                               // echo "<td>".'<img src="data:image;base64,'.base64_encode($row['meal_pic']).'alt="image" style="width:100; height:100;"/>' ."</td>";
+                                echo "<td>".'<img src="data:image;base64,'.base64_encode($row['meal_pic']).'alt="image" style="width:100; height:100;"/>' ."</td>";
 								echo "<td>".$row['perfect_meal']."</td>";
 								
                            echo "</tr>";
