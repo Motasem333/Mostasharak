@@ -36,14 +36,15 @@ session_start();
               
       <form class="center-block" action="loginbke.php" formaction="main1.php" method="POST" role="form" >
 	  <h2 class="text-center">تسجيل <span>دخول</span> الآن</h2>
-      <h3 style='margin-left:5vh; color:red; font-size:1.12rem'><?php if(isset($_SESSION['user_not_valid']) ){echo $_SESSION['user_not_valid'];}?><h3>
+      <h3 style='margin-left:5vh; color:red; font-size:1.12rem'>
+	  <?php if(isset($_SESSION['user_not_valid']) ){echo $_SESSION['user_not_valid'];}?><h3>
 
       <input  class="form-control" type="text" name="Email" placeholder="Email" required>
       <input  class="form-control" type="password" name="password" placeholder="Password" required>
       <input  class="btn1 btn btn-block" type="submit"  id="Home" value="ابدأ الآن">
 	  <a href="guest.html"  ><input  class="btn2 btn btn-block" value ="دخول كضيف"></a>
 
-      <p class="pt-3 float-end ">لانشاء حساب  <a href="signup.html">اضغط هنا</a></p>
+      <p class="pt-3 float-end ">لانشاء حساب  <a href="signup.php">اضغط هنا</a></p>
 
     </form>
 
