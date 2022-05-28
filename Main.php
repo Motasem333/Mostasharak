@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
-<!--
+
 <?php
-/*
+session_start();
+if (!empty($_SESSION['email'])){
+
 $servername = "localhost";
 $username = "root";
 $pass = "";
-$database = "mostashark";
+$database = "mktest";
 
 $conn = mysqli_connect($servername, $username, $pass,$database);
 if (!$conn) {
@@ -15,20 +17,21 @@ die("Connection failed) ". mysqli_connect_error());
 
 else {
 	$day = time();
-	$time1= strtotime("18-05-2022");
+	$time1= strtotime("25-05-2022");
     $d = $day - $time1;
     $c= round($d/(60*60*24));	
-	$select_data_user = "select meal_name,meal_pic,calories,perfect_meal,meal_time,day from meal limit 3 offset $c";
+	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset $c";
 	$run_select = mysqli_query($conn,$select_data_user);
 	$run_num = mysqli_num_rows($run_select);
 
 }
-*/
+
 ?>
--->
+
 <html lang="en" dir="ltr">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -40,14 +43,41 @@ else {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+	<script src="js/Main.js"></script>
     <link rel="stylesheet" href="css/Main.css">
     <title>مستشارك | صفحة المستخدم  </title>
 </head>
 <body>
+    <div class="">
+      <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
+      <div class="container-fluid">
+       
+       
+       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse " id="main_nav">
+       <ul class="items navbar-nav ms-auto">
+         <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">الصفحة الرئيسية </a> </li>
+		 <li class="nav-item active"> <a class="nav-link" href="store.html" style="color:white">المتجر </a> </li>
+		 <li class="nav-item active"> <a class="nav-link" href="exercises.html" style="color:white">التمارين </a> </li>
+         <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
+
+
+       </ul>
+      
+       </div> <!-- navbar-collapse.// -->
+       <img src="img/logoedit.png" style="height:10vh">
+      </div> <!-- container-fluid.// -->
+     </nav>
+   
+
     <header>
+	
         <div class="logo">
         <img src="img/logo.png" alt="">
         </div><h1>مستشارك</h1>
@@ -56,25 +86,76 @@ else {
       <div class="container">
 <div class="alert alert-success" role="alert" style="margin-top:10vh; margin-bottom:2vh ;direction:rtl">
   <h4 class="alert-heading" style="direction:rtl; float:start">مرحبا بك !</h4>
-  <!---
+  
   <?php
-  /*
-   $email = $_POST['Email'];
+  
+   $email = $_SESSION['email'];
    $select_name ="select F_name from user where Email = '$email'";
    $run_select1 = mysqli_query($conn,$select_name);
    while($result = mysqli_fetch_assoc($run_select1)){
    echo "<p>   <b>".$result['F_name']."</b>  تبين من خلال بياناتك التي ادخلتها ان هذا هو انسب برنامج غذائي لمدة 30 يوم القادمة </p>";}
- */ ?>-->
+   
+ ?>
   <hr>
 </div>
-            <div class="Sec1" style="margin-top:2vh ;  height: 195vh; ">
+<?php
+$selectill = "select illnesses from user where email = '$email'";
+$runselect = mysqli_query($conn,$selectill);
+$result1 = mysqli_fetch_assoc($runselect);
+if ($result1['illnesses']=='السكري'){?>
+ <div class="Sec1" style="margin-top:2vh ;  height:200vh; ">
+ 
+                <div class="head">
+                    <h1 style="margin-bottom:5vh">الجدول الغذائي المقترح</h1>
+                </div>
+          <div class="Shecdule">
+                    <table class="demTable">
+                        <thead>
+                            <tr>
+                                <th>الفطور</th>
+                                <th>الغذاء</th>
+                                <th> العشاء</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                        $select22 = "select * from diabetes";
+	                    $runselect22 = mysqli_query($conn,$select22);
+					    $numofrwosdia = mysqli_num_rows($runselect22);
+					    if ( $numofrwosdia >0){
+                        while($row = mysqli_fetch_assoc($runselect22)){
+						  echo "<tr>";									
+                                echo "<td> "."<b>".$row['breakfast']."</b>"."</td>";
+                                echo "<td>".$row['lunch']."</td>";
+								echo "<td>".$row['dinner']."</td>";
+								
+                           echo "</tr>";
+						}
+					}
+						else {
+							 echo "<td> "."<b> فارغ </b>"."</td>";
+							 echo "<td> "."<b> فارغ </b>"."</td>";
+							 echo "<td> "."<b> فارغ </b>"."</td>";
+						}
+}
+else {
+						?> 
+                        </tbody>
+                    </table>
+	
+	
+	
+	
+<?php 
+?>
+           <div class="Sec1" style="margin-top:2vh ;  height:200vh; ">
 			
                 <div class="head">
                     <h1 style="margin-bottom:5vh">الجدول الغذائي المقترح</h1>
                 </div>
 
                 <div class="Shecdule">
-                    <table class="demTable">
+                   <table class="demTable">
                         <thead>
                             <tr>
                                 <th><br></th>
@@ -84,9 +165,8 @@ else {
                             </tr>
                         </thead>
                         <tbody>
-                            <!---
+                            
 						<?php
-                        /*
 						if ( $run_num > 0){
 						while($row = mysqli_fetch_assoc($run_select)){
 						  echo "<tr>";									
@@ -104,11 +184,11 @@ else {
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";	
 						}
-                        */
-						?> -->
+                        
+}
+?> 
                         </tbody>
                     </table>
-					
 					<td>&nbsp;<button class="btn btn-success bg-white text-success btn-lg" id="Done"
 					style = "width:40vh ;margin : 3vh 50vh ;margin-bottom:0.5vh"
 					
@@ -118,8 +198,8 @@ else {
                     <div class="Pr">
                         <h3>ألانجاز العام</h3>
                         <div class="progress">
-                            <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0"
-                            aria-valuemin="0" aria-valuemax="1500" style="width:999px">
+                            <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="1"
+                            aria-valuemin="1" aria-valuemax="1500" style="width:0px">
                             </div>
                           </div>
                           <div class="Prpoint">
@@ -144,26 +224,36 @@ else {
             </div>
         <div class="Sec2">
             <div class="row"  style=" width:100%;justify-content: space-around;">
-                <!-- counter -->
 
                 <div id="Icon_hover" class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated" data-wow-duration="300ms" style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
                   <img src="img\scale.png"  style="width:20vh"  alt="">
                     <span id="anim-number-pizza" class="counter-number"></span>
-                    <span class="timer counter alt-font appear" data-to="980" data-speed="7000">24</span>
+                    <span class="timer counter alt-font appear" data-to="980" data-speed="7000"><?php
+					$selecth = "select Height,Wieght from user where email = '$email'";
+					$runselecth = mysqli_query($conn,$selecth);
+					$resulth = mysqli_fetch_assoc($runselecth);
+					$h = $resulth['Height'];
+					$w = $resulth['Wieght'];
+					$calc = ($w/($h/100)**2);
+					echo $calc;
+					    ?></span>
                     <p class="counter-title" style="font-size:2rem">الكتلة الخاصة بجسمك</p>
                 </div>
                 <!-- end counter -->
                 <!-- counter -->
                 <div id="Icon_hover" class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten animated" data-wow-duration="900ms" style="visibility: visible; animation-duration: 900ms; animation-name: fadeInUp;">
                   <img src="img\apple.png"   style="width:20vh;"  alt="">
-                     <span class="timer counter alt-font appear" data-to="810" data-speed="7000">810</span>
+                     <span class="timer counter alt-font appear" data-to="810" data-speed="7000"><?php
+					 $calories = 24 * 1.4 * $w;
+					 echo $calories;?></span>
                     <span class="counter-title" style="font-size:2rem">السعرات الحرارية اليومية</span>
                 </div>
                 <!-- end counter -->
                 <!-- counter -->
                 <div id="Icon_hover" class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated" data-wow-duration="1200ms" style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
                   <img src="img\day.svg"  style="width:20vh"  alt="">
-                     <span class="timer counter alt-font appear" data-to="100" data-speed="7000">100</span>
+                     <span class="timer counter alt-font appear" data-to="100" data-speed="7000"><?php echo $c;
+					 ?></span>
                     <span class="counter-title" style="font-size:2rem">   عدد الايام التي تم انجازها</span>
                 </div>
                 <!-- end counter -->
@@ -172,27 +262,140 @@ else {
 
 
 
-              <div class="Sec3">
+              <div class="Sec3" style="margin-bottom:5vh">
                   <div class="Dailytopic1" >
-                      <h1>معلومة غذائية </h1>
-                      <p></p>
+                      <h1>اعلانات  </h1>
+					  
+                      <?php
+					  $selectads = "select *  from ads limit 1 ";
+					  $run_selectads= mysqli_query($conn,$selectads);
+					  while($row = mysqli_fetch_array($run_selectads)){
+						  echo "<P>".$row["ad_text"]."</P>";
+						  
+					  }
+					  
+					  
+					  
+					  ?>
+					
                   </div>
-                  <div class="Dailytopic2">
-                    <h1> معلومة رياضية</h1>
-                    <p></p>
-                </div>
               </div>
+			  
+			  
+			  
 
 
 
 
         </div>
+ <div>
+ 
+
+
+<!--start section our footer-->
+<!-- Footer -->
+<footer class="footer text-center text-lg-start bg-dark text-muted" style="direction:rtl">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>تواصل معنا عبر المنصات الاجتماعية</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="https://www.facebook.com/" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.twitter.com" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.google.com" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="https://www.instagram.com" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.github.com" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4 ">
+            <i class="fas fa-gem me-3"></i>مستشارك
+          </h6>
+          <p>هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات الصحية
+          </p>
         </div>
-        
-    
-</body>
+        <!-- Grid column -->
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          
+          <p>
+            <a href="guest.html" class="text-reset">صفحة الضيف</a>
+          </p>
+          <p>
+            <a href="store.html" class="text-reset" >المتجر</a>
+          </p>
+          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            تواصل معنا
+          </h6>
+          
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            contact@mostasharak.com
+          </p>
+          <p><i class="fas fa-phone me-3"> </i>9999 9999 9627+</p>
+          
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+   Mostasharak © 2022 
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<!--end section our footer-->
 </html>
 
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+<?php
 
-<script src="js/Main.js"></script>
+}
+else{
+	header('location:Home.php');
+}
+?>
