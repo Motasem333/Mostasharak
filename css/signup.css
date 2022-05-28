@@ -4,8 +4,6 @@
   100% {
     opacity: .9; } }
 
-::-webkit-scrollbar {
-  width: 10px; }
 
 body {
   animation: Welcome 1s;
@@ -57,7 +55,7 @@ h4 {
   padding: 10px; }
 
 .s2 {
-  bottom: -18%;
+  bottom: -25%;
   left: -40%;
   position: absolute; }
   .s2 label {
