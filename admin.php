@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+if (!empty($_SESSION['email'])){
 $servername = "localhost";
 $username = "root";
 $pass = "";
@@ -33,6 +33,25 @@ die("Connection failed) ". mysqli_connect_error());
 
 </head>
 <body>
+<div class="">
+      <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
+      <div class="container-fluid">
+       
+       
+       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse " id="main_nav">
+       <ul class="items navbar-nav ms-auto">
+         <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
+
+
+       </ul>
+      
+       </div> <!-- navbar-collapse.// -->
+       <img src="img/logoedit.png" style="height:10vh">
+      </div> <!-- container-fluid.// -->
+     </nav>
     <div class="container  mx-auto ">
         <header>
         <div class="logo">
@@ -596,12 +615,13 @@ if (isset($_POST['insertworkout'])){
 <div class="Sec3">
 
     <div class="head">
-	<form action="" method="POST">
+	<form action="" method="POST" enctype="multipart/form-data">
         <h1 style="margin-bottom:5vh"> نشر أعلان</h1>
 
         <label for=""  >موضوع الاعلان :   </label>
         <input type="text"  class="form-control rounded d-inline" style="width:50%" name="ad_subject" value=""/>
         <br><br><br>
+		<input type="file" name="image">
         <label for="" style="font-size:1.5rem" >نص الاعلان :   </label>
         <textarea class="form-control" aria-label="With textarea" name="ad_text" style="height:15vh"></textarea>
         <button type="submit" name="submitads" style="margin-right: 40vh; width:45%; margin-top: 2vh" class="btn btn-outline-success bg-white">نشر الاعلان </button>
@@ -613,10 +633,14 @@ if (isset($_POST['insertworkout'])){
 if (isset($_POST['submitads'])){
 	$adsub = $_POST['ad_subject'];
 	$adtxt = $_POST['ad_text'];
+/*$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 	$insertad = "insert into ads values('$adsub','$adtxt')";
-	$run_unsertad = mysqli_query($conn,$insertad);
+    $insertttt ="in)";
 	
-}
+*/
 
 
 ?>
@@ -626,7 +650,8 @@ if (isset($_POST['submitads'])){
 </div>
 <div class="Sec4" style="height:80vh">
 <h1 style="color:white; margin:auto ;margin-top:5vh ">احصائيات المسجلين</h1>
-<div style=" display:block; margin-left:50vh;margin-top:25vh ; color : white ; font-size:1.25rem ; line-height:200% ;>
+<div style=" display:block; margin-left:50vh;margin-top:25vh ; color : white ; font-size:1.15rem ; line-height:200% ;">
+
 <?php
 $select_data_user = "select * from user";
 	$run_select_data_user = mysqli_query($conn,$select_data_user);
@@ -637,7 +662,8 @@ $select_data_user = "select * from user";
 	$run_greater = mysqli_query($conn,$greater);
 	$num_of_rowsage = mysqli_num_rows($run_greater);
 	echo "عدد المستخدمين اكبر من 18 عام : " .$num_of_rowsage ;
-	echo "<br>";
+    echo "<br>";
+
     $less = "select * from user where age < 18";
 	$run_less = mysqli_query($conn,$less);
 	$num_of_rowsagel = mysqli_num_rows($run_less);
@@ -666,14 +692,25 @@ $select_data_user = "select * from user";
     $illnessesP = "select * from user where illnesses='الضغط'";
 	$run_illnessesP = mysqli_query($conn,$illnessesP);
 	$num_of_illP = mysqli_num_rows($run_illnessesP);
-	echo "عدد المستخدمين الذين يعانون من الضغط : " .$num_of_illP ;
+	echo "عدد المستخدمين الذين يعانون من الضغط : " .$num_of_illP;
 	echo "<br>";
     $illnessesN = "select * from user where illnesses='النقرس'";
 	$run_illnessesN = mysqli_query($conn,$illnessesN);
 	$num_of_illN = mysqli_num_rows($run_illnessesN);
-	echo " عدد المستخدمين الذين يعانون من النقرس : " .$num_of_illN ;?>
+	echo " عدد المستخدمين الذين يعانون من النقرس : " .$num_of_illN ;
+	
+	?>
+
 
 </div>
 </div>           
 </body>
 </html>
+<?php
+
+}
+}
+else {
+	header('location:Home.php');
+}
+?>
