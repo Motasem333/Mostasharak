@@ -71,6 +71,7 @@ die("Connection failed) ". mysqli_connect_error());
 	        $run_select_admin_name = mysqli_query($conn,$select_admin_name);
             while ($run_fetch = mysqli_fetch_assoc($run_select_admin_name)){
 				echo $run_fetch['admin_name'];
+			
 				  }
 	      
 		?>
@@ -621,13 +622,13 @@ if (isset($_POST['insertworkout'])){
         <label for=""  >موضوع الاعلان :   </label>
         <input type="text"  class="form-control rounded d-inline" style="width:50%" name="ad_subject" value=""/>
         <br><br><br>
-		<input type="file" name="image">
         <label for="" style="font-size:1.5rem" >نص الاعلان :   </label>
         <textarea class="form-control" aria-label="With textarea" name="ad_text" style="height:15vh"></textarea>
         <button type="submit" name="submitads" style="margin-right: 40vh; width:45%; margin-top: 2vh" class="btn btn-outline-success bg-white">نشر الاعلان </button>
 </form>
-
-    </div>
+</div>
+   
+	  
 <?php
 
 if (isset($_POST['submitads'])){
@@ -642,17 +643,17 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	
 */
 
-
 ?>
-</div>
 
 </div>
 </div>
-<div class="Sec4" style="height:80vh">
+</div>
+<div class="Sec3" style="height:80vh">
 <h1 style="color:white; margin:auto ;margin-top:5vh ">احصائيات المسجلين</h1>
 <div style=" display:block; margin-left:50vh;margin-top:25vh ; color : white ; font-size:1.15rem ; line-height:200% ;">
 
 <?php
+if (isset($_POST['test'])){
 $select_data_user = "select * from user";
 	$run_select_data_user = mysqli_query($conn,$select_data_user);
 	$num_of_rows = mysqli_num_rows($run_select_data_user);
@@ -698,12 +699,10 @@ $select_data_user = "select * from user";
 	$run_illnessesN = mysqli_query($conn,$illnessesN);
 	$num_of_illN = mysqli_num_rows($run_illnessesN);
 	echo " عدد المستخدمين الذين يعانون من النقرس : " .$num_of_illN ;
-	
+}
 	?>
-
-
 </div>
-</div>           
+</div>
 </body>
 </html>
 <?php
