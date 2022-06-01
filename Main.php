@@ -233,13 +233,18 @@ else if($result1['illnesses']=='النقرس'){?>
 	
 }
 else if($result1['illnesses']=='الضغط'){?>
+<<<<<<< HEAD
   <div  class="start-carousel p-3">
+=======
+  <div class="start-carousel p-3">
+>>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner text-center">
     <div class='p-3'>
       
     </div>
       <div class="carousel-item active">
+<<<<<<< HEAD
        <h2>شرب من ٨  ل١٢ كوب من الماء</h2>
       </div>
       <div class="carousel-item">
@@ -250,6 +255,20 @@ else if($result1['illnesses']=='الضغط'){?>
       </div>
     </div>
   
+=======
+       <h2></h2>
+      </div>
+      <div class="carousel-item">
+        <h2>الابتعاد عن الدهنيات والاجبان الصفراء والشوكلاته والكاكاو</h2> 
+      </div>
+      <div class="carousel-item">
+        <h2>الكركديه مفيد جدا في حالات النقرس</h2> 
+      </div>
+    </div>
+     <div class="carousel-item">
+        <h2>ان يخفض الوزن اذا كنت تشكو من السمنة والوزن الزائد</h2> 
+      </div>
+>>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
   </div>
   </div>
     
@@ -272,7 +291,11 @@ else if($result1['illnesses']=='الضغط'){?>
               
               
                               <?php
+<<<<<<< HEAD
                           $select22 = "select * from prusure ";
+=======
+                          $select22 = "select * from gout limit 1 offset $b";
+>>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
               
                         $runselect22 = mysqli_query($conn,$select22);
                 $numofrwosdia = mysqli_num_rows($runselect22);
@@ -281,8 +304,14 @@ else if($result1['illnesses']=='الضغط'){?>
                 echo "<tr>";									
                                   echo "<td>".$row['breakfast']."</b>"."</td>";
                                   echo "<td>".$row['lunch']."</td>";
+<<<<<<< HEAD
                                   echo "<td>".$row['dinner']."</td>";
                 echo "</tr>";
+=======
+                  echo "<td>".$row['dinner']."</td>";
+                  
+                             echo "</tr>";
+>>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
               }
             }
               else {

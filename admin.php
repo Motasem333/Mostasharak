@@ -49,7 +49,7 @@ die("Connection failed) ". mysqli_connect_error());
        </ul>
       
        </div> <!-- navbar-collapse.// -->
-       <img src="img/logoedit.png" style="height:10vh">
+       <img src="img/logoedit.png" alt="mmm" style="height:10vh">
       </div> <!-- container-fluid.// -->
      </nav>
     <div class="container  mx-auto ">

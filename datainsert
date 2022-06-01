@@ -1,0 +1,14 @@
+INSERT INTO `diabetes` (`dia_id`, `breakfast`, `lunch`, `dinner`) VALUES (NULL, '٢ ملعقة لبنه مع ملعقة زيت زيتون + ٣ ملاعق فول مدمس \r\n+ رغيف خبز اسمر .', 'صدر دجاجه مشويه + ٥ او ٦ ملاعق اكل ارز مطبوخ \r\n+  ٢/١ زبديه متوسطه الحجم خضار مطبوخة', 'علبة صغيرة تونة مصفى من الزيت + شرحات خيار وبندورة');
+
+-----------
+CREATE TABLE `mktest`.`gout`
+( `gout_id` INT AUTO_INCREMENT PRIMARY KEY, `breakfast` VARCHAR(255) NULL , `lunch` VARCHAR(255) NULL , `dinner` VARCHAR(255) NULL ) ENGINE = InnoDB;
+
+------------
+INSERT INTO `gout` (`gout_id`, `breakfast`, `lunch`, `dinner`) VALUES (NULL, 'رغيف خبز اسمر + بيضه مسلوقة او ملعقة لبنة + شرحات خيار وبندورة  + كوب شاي (٢/١ ملعقة صغيرة سكر)', 'رغيف خبز اسمر او ٦ ملاعق ارز او فريكة + لحوم ( كل يوم بعد يوم قطعتين رأس عصفور او نصف صدر دجاج )', 'بطاطا مشوية + سلطة خضار او كوب خيار بلبن');
+INSERT INTO `gout` (`gout_id`, `breakfast`, `lunch`, `dinner`) VALUES (NULL, 'رغيف خبز اسمر + ٢/١ كوب لبن رائب + شرحات خيار وبندورة + او كوب كورن فليكس + كوب حليب خالي من الدسم', 'كوب سلطة خضار + ٢/١ كوب مجدرة ارز او عدس', 'كوب شوربه خضار مشكله');
+-------------------------
+CREATE TABLE `mktest`.`prusure` 
+( `p_id` INT AUTO_INCREMENT PRIMARY KEY , `breakfast` VARCHAR(255)  , `lunch` VARCHAR(255)  , `dinner` VARCHAR(255) ) ENGINE = InnoDB;
+
+INSERT INTO `prusure` (`p_id`, `breakfast`, `lunch`, `dinner`) VALUES (NULL, '٢ ملعقه عسل نحل صغيرة + ٢ توست بني ويمكنك تناول مشروب مع الفطار (قهوة او شاي ) بعد الفطار الصيام لمدة 5 ساعات بدون نوم بعد وجبة الافطار وشرب الماء فقط', '٣ قطع من السمك متوسطة الحجم مشوي او علبه تونه مصفيه من الزيت + طبق سلطة + ٢ حبه من الخضار', '٣ ثمرات فاكهة مختلفين او متشابهين (تفاح - كيوي - جوافة بدون بذر )');
