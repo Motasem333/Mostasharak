@@ -1,24 +1,14 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 
 
 <?php
 session_start();
 if (!empty($_SESSION['email'])){
-=======
-<!DOCTYPE HTML>
-
-<?php 
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
 
 $servername = "localhost";
 $username = "root";
 $pass = "";
-<<<<<<< HEAD
 $database = "mktest";
-=======
-$database = "mostasharak";
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
 
 $conn = mysqli_connect($servername, $username, $pass,$database);
 if (!$conn) {
@@ -27,7 +17,6 @@ die("Connection failed) ". mysqli_connect_error());
 
 else {
 	$day = time();
-<<<<<<< HEAD
 	$time1= strtotime("31-5-2022");
     $d = $day - $time1;
     $c= round($d/(60*60*24));
@@ -38,32 +27,16 @@ else {
 
 	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset $c";
 	$run_select = mysqli_query($conn,$select_data_user);
-=======
-	$time1= strtotime("18-05-2022");
-    $d = $day - $time1;
-    $c= round($d/(60*60*24))+3;	
-	$select_data_user = "select meal_name,calories,perfect_meal,meal_time,day from meal ";
-    $run_select = mysqli_query($conn,$select_data_user);
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
 	$run_num = mysqli_num_rows($run_select);
 
 }
 
 ?>
-<<<<<<< HEAD
 
 <html lang="en" dir="ltr">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-=======
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-		<script src = "./js/Main.js"/>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -75,7 +48,6 @@ else {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
-<<<<<<< HEAD
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
@@ -83,16 +55,10 @@ else {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 	<script src="js/Main.js"></script>
-=======
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
     <link rel="stylesheet" href="css/Main.css">
     <title>مستشارك | صفحة المستخدم  </title>
 </head>
 <body>
-<<<<<<< HEAD
     <div class="">
       <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
       <div class="container-fluid">
@@ -119,16 +85,12 @@ else {
 
     <header>
 	
-=======
-    <header>
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
         <div class="logo">
         <img src="img/logo.png" alt="">
         </div><h1>مستشارك</h1>
     </header>
 
       <div class="container">
-<<<<<<< HEAD
 <div class="alert alert-success" role="alert" style="margin-top:10vh; margin-bottom:2vh ;direction:rtl">
   <h4 class="alert-heading" style="direction:rtl; float:start">مرحبا بك !</h4>
   
@@ -270,6 +232,66 @@ else if($result1['illnesses']=='النقرس'){?>
 						}
 	
 }
+else if($result1['illnesses']=='الضغط'){?>
+  <div  class="start-carousel p-3">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner text-center">
+    <div class='p-3'>
+      
+    </div>
+      <div class="carousel-item active">
+       <h2>شرب من ٨  ل١٢ كوب من الماء</h2>
+      </div>
+      <div class="carousel-item">
+        <h2>يمكنك تناول الخيار والخس والمشروبات بعد صيام 5 ساعات من الفطار </h2> 
+      </div>
+      <div class="carousel-item">
+        <h2>الصيام لمدة 5 ساعات بدون نوم بعد وجبة الافطار وشرب الماء فقط</h2> 
+      </div>
+    </div>
+  
+  </div>
+  </div>
+    
+     <div class="Sec1" style="margin-top:2vh ;  height:200vh; ">
+   
+                  <div class="head">
+                      <h1 style="margin-bottom:5vh">الجدول الغذائي المقترح</h1>
+                  </div>
+            <div class="Shecdule">
+                      <table class="demTable">
+                          <thead>
+                              <tr>
+                                  <th>الفطور</th>
+                                  <th>الغذاء</th>
+                                  <th> العشاء</th>
+                  
+                              </tr>
+                          </thead>
+                          <tbody>
+              
+              
+                              <?php
+                          $select22 = "select * from prusure ";
+              
+                        $runselect22 = mysqli_query($conn,$select22);
+                $numofrwosdia = mysqli_num_rows($runselect22);
+                if ( $numofrwosdia >0){
+                          while($row = mysqli_fetch_assoc($runselect22)){
+                echo "<tr>";									
+                                  echo "<td>".$row['breakfast']."</b>"."</td>";
+                                  echo "<td>".$row['lunch']."</td>";
+                                  echo "<td>".$row['dinner']."</td>";
+                echo "</tr>";
+              }
+            }
+              else {
+                 echo "<td> "."<b> فارغ </b>"."</td>";
+                 echo "<td> "."<b> فارغ </b>"."</td>";
+                 echo "<td> "."<b> فارغ </b>"."</td>";
+              }
+    
+  }
 else {
 						?> 
                         </tbody>
@@ -288,16 +310,6 @@ else {
 
                 <div class="Shecdule">
                    <table class="demTable">
-=======
-            <div class="Sec1">
-                <div class="head">
-                    <h1>جدول الطعام المقترح</h1>
-                    <p>من خلال تحليل بياناتك تم اقتراح احد جداول الطعام الصحية</p>
-                </div>
-
-                <div class="Shecdule">
-                    <table class="demTable">
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
                         <thead>
                             <tr><th><br></th>
                                 <th>مكونات الوجبة&nbsp;</th>
@@ -305,14 +317,9 @@ else {
                                 <th>الوجبة المثالية</th>
                             </tr>
                         </thead>
-<<<<<<< HEAD
                         <tbody>
                             
 						<?php
-=======
-                        <tbody>  
-                        <?php
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
 						if ( $run_num > 0){
 						while($row = mysqli_fetch_assoc($run_select)){
 						  echo "<tr>";									
@@ -320,24 +327,14 @@ else {
                                 echo "<td>".$row['meal_name']."</td>";
 								echo "<td>".$row['calories']."</td>";
                                 echo "<td>".'<img src="data:image;base64,'.base64_encode($row['meal_pic']).'alt="image" style="width:100; height:100;"/>' ."</td>";
-<<<<<<< HEAD
 								
                            echo "</tr>";
-=======
-								echo "<td>".$row['perfect_meal']."</td>";
-								
-                           echo "</tr>";
-							
-							
-							
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
 						}
 						} 
 						else {
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";
-<<<<<<< HEAD
 							 echo "<td> "."<b> فارغ </b>"."</td>";	
 						}
                         
@@ -356,21 +353,6 @@ else {
                         <div class="progress">
                             <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="1"
                             aria-valuemin="1" aria-valuemax="1500" style="width:0px">
-=======
-							 echo "<td> "."<b> فارغ </b>"."</td>";
-            
-							
-						}
-						
-						?>
-						</tbody>						
-                       </table>
-					  <div > <button class="btn btn-success bg-white text-success btn-lg " style="width:50vh ; Margin-right:50vh; Margin-top:7vh " id="Done">الانتهاء من الوجبات اليومية</button> </div>
-                    <div class="Pr">
-                        <h3>ألانجاز العام</h3>
-                        <div class="progress">
-                            <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1500" style="width:499px">
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
                             </div>
                           </div>
                           <div class="Prpoint">
@@ -381,7 +363,6 @@ else {
                           <br><br>
                           <h5>-يتم الحصول على كود خصم بمقدار 25% عند انجاز 500 نقطة فأكثر</h5>
                           <h5>-يتم الحصول على هدية من اختيارك في حال الوصول الى 1000 نقطة في اقل من 50 يوم</h5>
-<<<<<<< HEAD
                           <h5>-استخدم كود الهدية او الخصم في المتجر لتفعيلهما </h5>
                           <button class="btn btn-outline-success btn-lg bg-white" id="Get1">طلب الحصول على خصم</button>
                           <button class="btn btn-outline-success btn-lg bg-white" id="Get0" style="pointer-events:none">XXXXXX </button>
@@ -571,17 +552,3 @@ else{
 	header('location:Home.php');
 }
 ?>
-=======
-                          <button class="btn btn-outline-success btn-lg bg-white" id="Get1">طلب الحصول على كود</button>
-                          <button class="btn btn-outline-success btn-lg bg-white" id="Get0">XXXXXX </button>
-                          <img src="img/cancel.png"  id="cancel"alt="">
-                          <br><br>
-                          <button class="btn btn-outline-success btn-lg bg-white" id="Get2">طلب الحصول على هدية</button>
-                        </div>
-                 </div>
-            </div>
-        </div>
-    
-</body>
-</html>
->>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
