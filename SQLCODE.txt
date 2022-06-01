@@ -1,0 +1,103 @@
+CREATE TABLE `mostashark`.`user`
+(
+  `Email` VARCHAR(255) NOT NULL,
+  `phone_number` VARCHAR(255) NOT NULL,
+  `F_name` VARCHAR(255) NOT NULL,
+  `L_name` VARCHAR(255) NOT NULL,
+  `Wieght` INT NOT NULL,
+  `Height` INT NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `gender` CHAR(6) NOT NULL,
+  `age` INT NOT NULL,
+  `illnesses` VARCHAR(255),
+  `role` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (Email)
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`workout`
+(
+ `workout_name` VARCHAR(255) NOT NULL,
+ `workout_id` INT NOT NULL,
+  `workout_time` VARCHAR(255) NOT NULL,
+  `Email` VARCHAR(255) ,
+  PRIMARY KEY (workout_id),
+  FOREIGN KEY (Email) REFERENCES User(Email) ON DELETE CASCADE
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`meal`
+(
+  `meal_id` INT NOT NULL,
+  `meal_pic` BLOB NOT NULL,
+  `meal_name` VARCHAR(255) NOT NULL,
+  `Email` VARCHAR(255) ,
+  `meal_time` VARCHAR(255) ,
+  `calories` VARCHAR(255),
+  PRIMARY KEY (meal_id),
+  FOREIGN KEY (Email) REFERENCES User(Email) ON DELETE CASCADE
+)ENGINE = InnoDB;
+
+CREATE TABLE  `mostashark`.`illnesses`(
+
+`illnesses_name` VARCHAR(255) not null
+
+
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`contact_form`
+(
+  `name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `message` VARCHAR(255) 
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`basket`
+(
+  `Number_of_product` INT NOT NULL,
+  `total` INT NOT NULL,
+  `basket_id` INT NOT NULL,
+  `transaction_id` INT NOT NULL,
+  `date` DATE NOT NULL,
+  `Email` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (basket_id),
+  FOREIGN KEY (Email) REFERENCES User(Email) ON DELETE SET NULL
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`product`
+(
+  `product_id` INT NOT NULL,
+  `product_name` VARCHAR(255) NOT NULL,
+  `price` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `pics` BLOB  NOT NULL,
+  `basket_id` INT NOT NULL,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (basket_id) REFERENCES basket(basket_id) ON DELETE SET NULL
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`Weights`
+(
+  `weight` VARCHAR(255) NOT NULL,
+  `product_id` INT NOT NULL,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE SET NULL
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`Protien`
+(
+  `Size` VARCHAR(255) NOT NULL,
+  `Type` VARCHAR(255) NOT NULL,
+  `Exp_Date` DATE NOT NULL,
+  `product_id` INT,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE SET NULL
+)ENGINE = InnoDB;
+
+CREATE TABLE `mostashark`.`Clothes`
+(
+  `Size` VARCHAR(255) NOT NULL,
+  `Color` VARCHAR(255) NOT NULL,
+  `Category` VARCHAR(255) NOT NULL,
+  `product_id` INT NOT NULL,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE SET NULL
+)ENGINE = InnoDB;
