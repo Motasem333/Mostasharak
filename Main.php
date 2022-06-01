@@ -552,3 +552,5 @@ else{
 	header('location:Home.php');
 }
 ?>
+
+</body>

@@ -116,13 +116,13 @@
 
                         <div class="mb-3 col-md-4">
                             <label>الطول<span class="text-danger"></span></label>
-                            <input required autocomplete="off" type="number" name="height" class="form-control" placeholder="ادخل الطول بال ( سم)" >
+                            <input required autocomplete="off" type="number" name="height" class="form-control" placeholder="ادخل الطول بال ( سم)" min="0" max="220">
                         </div>
 
 
                         <div class="mb-3 col-md-4">
                             <label>الوزن<span class="text-danger"></span></label>
-                            <input required autocomplete="off" type="number" name="weight" class="form-control" placeholder="ادخل الوزن بال ( كغ )" >
+                            <input required autocomplete="off" type="number" name="weight" class="form-control" placeholder="ادخل الوزن بال ( كغ )" min="40" max="300"  >
                         </div>
                         <div class="mb-3 col-md-4 " style="width : 34%; margin-right : -1vh">
                           <label>الجنس<span class=""></span></label>

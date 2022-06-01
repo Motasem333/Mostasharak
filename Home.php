@@ -57,7 +57,6 @@ session_start();
        
      </div>
 
-<<<<<<< HEAD
 
      <div class = "aboutus col-lg-6 ">
 
@@ -66,30 +65,6 @@ session_start();
      <p class="float-end  ">مستشارك هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات التي من شأنها أن تساعد في توفير الوقت والطاقة والمال من خلال توفير المعلومات الأساسية من المستخدم ، وهذا سيفتح الكثير من الخيارات للعملاء بما في ذلك ، الحمية ، والتمارين ، والوصفات ، والترقيات الصالة الرياضية
 ومخازن البروتين بالإضافة إلى الكثير</P>
      </div>
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-     <div class = "aboutus col-lg-6 ">
-     
-=======
-<<<<<<< HEAD
-     <!--<div class = "col-lg-5 ">
-     <p>دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛ حيث تشمل المقالات جميع الجوانب المختلفة لأنواع المعرفة الإنسانية، وهي مكتوبة بلغة عربية ومبسّطة لتُساعد مستخدمي الإنترنت في جميع أنحاء العالم</p>
-     </div>-->
-=======
->>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
-     <div class = "rtlp col-lg-8 pt-4 ">
-     <h2 class="float-end ">عن مستشارك </h2>
->>>>>>> fe957c5f0ee8b63e7364c80fa75081028cc056f9
-     <p class="float-end ">مستشارك هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات التي من شأنها أن تساعد في توفير الوقت والطاقة والمال من خلال توفير المعلومات الأساسية من المستخدم ، وهذا سيفتح الكثير من الخيارات للعملاء بما في ذلك ، الحمية ، والتمارين ، والوصفات ، والترقيات الصالة الرياضية
-ومخازن البروتين بالإضافة إلى الكثير</P>
-     </div>
->>>>>>> c7ac9445ecac754f79ddc028d12e4748d9f9b0aa
-
-     
-
      
 
      
@@ -100,7 +75,7 @@ session_start();
 
 <!--start carousel-->
 <div class="start-carousel">
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide m-auto " data-bs-ride="carousel">
   <div class="carousel-inner text-center">
     <div class="carousel-item active">
      <h2> كلما مارست المجهود النافع, يزيد ذلك من إصلاح الجسد</h2>
@@ -130,7 +105,7 @@ session_start();
       
         <div class=" col-lg-3 " >
           <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="0.5s">
-          <i class="fa-solid fa-stopwatch fa-shake fa-3x"></i>
+          <i class="fa-solid fa-dumbbell fa-4x"></i>
           <div>
             <p class="pt-4">المساعده على لعب التمارين بالشكل الصحيح </p>
           </div>
@@ -140,7 +115,7 @@ session_start();
     
       <div class="col-lg-3">
         <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="1s">
-        <i class="fa-solid fa-bell fa-3x"></i>
+        <i class="fa-solid fa-store fa-4x"></i>
 
         <div>
           <p class="pt-4">متجر يضم العديد من الاشياء التي تخص الحياه الصحيه </p>
@@ -151,9 +126,10 @@ session_start();
       
       <div class="col-lg-3">
         <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="1.5s">
-          <i class="fa-solid fa-money-bill-wave fa-3x"></i>
+        <i class="fa-solid fa-calculator fa-4x"></i>
           <div>
             <p class="pt-4">قياس الكتله و السعرات الحراريه في الجسم</p>
+            
           </div>
       </div>
       </div>
@@ -162,7 +138,7 @@ session_start();
       
       <div class="col-lg-3">
         <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="2s">
-          <i class="fa-solid fa-money-bill-wave fa-3x"></i>
+        <i class="fa-solid fa-user fa-4x"></i>
           <div>
             <p class="pt-4">  توفير جدول غذائي للمستخدم حسب بياناته الشخصيه</p>
           </div>
@@ -307,7 +283,10 @@ session_start();
   cursorwidth:"16px",
 });</script>
 -->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
+<script src="js/wow.min.js"></script>
+<script>new WOW().init();</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
   <script src="js/home.js"></script> <!--scroll to top-->
 
   
