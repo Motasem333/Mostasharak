@@ -2,8 +2,12 @@ body{
     
     font-family: 'Almarai', sans-serif;  /* type of font */
      
-	
 }
+
+.header p{
+    direction: rtl;
+}
+
 
 video{
  position:absolute;

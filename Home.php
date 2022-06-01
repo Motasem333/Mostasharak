@@ -9,11 +9,11 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="css/Home.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="css/Home.css" rel="stylesheet">
   
 </head>
 <body>
@@ -57,9 +57,17 @@ session_start();
        
      </div>
 
+<<<<<<< HEAD
      <!--<div class = "col-lg-5 ">
      <p>دفَ موقع "موضوع" إلى توسيع المحتوى العربي على الإنترنت بسرعةٍ من خلال مكتبته التي تضمّ أكثر من 120 ألف مقالٍ حتى عام 2020؛ حيث تشمل المقالات جميع الجوانب المختلفة لأنواع المعرفة الإنسانية، وهي مكتوبة بلغة عربية ومبسّطة لتُساعد مستخدمي الإنترنت في جميع أنحاء العالم</p>
      </div>-->
+=======
+     <div class = "rtlp col-lg-8 pt-4 ">
+     <h2 class="float-end ">عن مستشارك </h2>
+     <p class="float-end ">مستشارك هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات التي من شأنها أن تساعد في توفير الوقت والطاقة والمال من خلال توفير المعلومات الأساسية من المستخدم ، وهذا سيفتح الكثير من الخيارات للعملاء بما في ذلك ، الحمية ، والتمارين ، والوصفات ، والترقيات الصالة الرياضية
+ومخازن البروتين بالإضافة إلى الكثير</P>
+     </div>
+>>>>>>> 9c7a9e13ffefeb32e6bc70822d60347d51c36049
 
      
 
@@ -86,34 +94,6 @@ session_start();
 </div>
 </div>
   <!--End carousel-->
-
-
-
-<!--start about us section-->
-
-<div class="about">
-  
-<div class="container mt-3">
-  <div class="row" >
-        <div class="col-lg-6 text-black ">
-          <h2>اعرف اكثر</h2>
-		  <p>مستشارك هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات التي من شأنها أن تساعد في توفير الوقت والطاقة والمال من خلال توفير المعلومات الأساسية من المستخدم ، وهذا سيفتح الكثير من الخيارات للعملاء بما في ذلك ، الحمية ، والتمارين ، والوصفات ، والترقيات الصالة الرياضية
-ومخازن البروتين بالإضافة إلى الكثير</P>
-      
-    </div>
-
-    <div class="  col-lg-6 ">
-      <img class="img-fluid" src="img/about1.gif">
-    </div>
-
-  </div>
-</div>
-</div>
-
-
-
-
-<!--end about us section-->
 
 
 
@@ -306,7 +286,7 @@ session_start();
   cursorwidth:"16px",
 });</script>
 -->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
   <script src="js/home.js"></script> <!--scroll to top-->
 
   
