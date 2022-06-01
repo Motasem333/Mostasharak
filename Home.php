@@ -57,11 +57,13 @@ session_start();
        
      </div>
 
-     <div class = "rtlp col-lg-8 pt-4 ">
-     <h2 class="float-end ">عن مستشارك </h2>
+     <div class = "aboutus col-lg-6 ">
+     
      <p class="float-end ">مستشارك هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات التي من شأنها أن تساعد في توفير الوقت والطاقة والمال من خلال توفير المعلومات الأساسية من المستخدم ، وهذا سيفتح الكثير من الخيارات للعملاء بما في ذلك ، الحمية ، والتمارين ، والوصفات ، والترقيات الصالة الرياضية
 ومخازن البروتين بالإضافة إلى الكثير</P>
      </div>
+
+     
 
      
 
@@ -195,7 +197,7 @@ session_start();
   <!-- Section: Social media -->
 
   <!-- Section: Links  -->
-  <section class="">
+  <section class="footerabout">
     <div class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">

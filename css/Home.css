@@ -6,7 +6,9 @@ body{
 
 .header p{
     direction: rtl;
+
 }
+
 
 
 video{
@@ -156,9 +158,15 @@ video{
     
 }
 
-.about p{
-    padding-top: 10px;
+.aboutus p {
+    line-height: 2em;
 }
+
+.aboutus {
+    position:absolute;
+    margin-top: 300px;
+}
+
 
 .about h2 ~ p::before{
     content: " ";
@@ -248,7 +256,7 @@ video{
     
 }
 
-.footer p{
+.footerabout p{
     direction: rtl;
 }
 

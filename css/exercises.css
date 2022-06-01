@@ -4,6 +4,7 @@ body{
     
     font-family: 'Almarai', sans-serif;  /* type of font */
     
+    
 }
 
 
@@ -117,12 +118,6 @@ body{
 }
 
 
-.show-exercises{
-    position: relative;
-    margin-top: 100px;
-    direction: rtl;
-    margin-left: 30%;
-}
 
 .tab-one , .tab-tow , .tab-three , .tab-four , .tab-five , .tab-six , .tab-seven , .tab-eight{
     position: absolute;
@@ -141,8 +136,6 @@ body{
     
     padding-top: 20px;
     margin-top: 100px;
-    direction: rtl;
-    position: relative;
     margin-top: 500px; 
     
 }
@@ -152,7 +145,7 @@ body{
 }
 
 
-/*end footer*/
+
 /*end footer*/
 
 
@@ -201,6 +194,5 @@ body{
 
 
 /*end navbar*/
-
 
 
