@@ -1,0 +1,28 @@
+body {
+  animation: Welcome 1s;
+  margin: 0;
+  font-family: 'Almarai', sans-serif; }
+
+.Instruction {
+  direction: rtl;
+  background-color: #00970B;
+  margin-top: 10vh;
+  height: auto;
+  padding-bottom: 10vh;
+  box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .Instruction .head {
+    color: white;
+    padding-right: 12vh;
+    padding-top: 10vh; }
+
+.food {
+  height: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-around; }
+  .food .insta {
+    background-color: white;
+    border-radius: 10px;
+    width: 40%;
+    padding: 10px;
+    text-align: right; }
