@@ -233,25 +233,23 @@ else if($result1['illnesses']=='النقرس'){?>
 	
 }
 else if($result1['illnesses']=='الضغط'){?>
-  <div class="start-carousel p-3">
+  <div  class="start-carousel p-3">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner text-center">
     <div class='p-3'>
       
     </div>
       <div class="carousel-item active">
-       <h2></h2>
+       <h2>شرب من ٨  ل١٢ كوب من الماء</h2>
       </div>
       <div class="carousel-item">
-        <h2>الابتعاد عن الدهنيات والاجبان الصفراء والشوكلاته والكاكاو</h2> 
+        <h2>يمكنك تناول الخيار والخس والمشروبات بعد صيام 5 ساعات من الفطار </h2> 
       </div>
       <div class="carousel-item">
-        <h2>الكركديه مفيد جدا في حالات النقرس</h2> 
+        <h2>الصيام لمدة 5 ساعات بدون نوم بعد وجبة الافطار وشرب الماء فقط</h2> 
       </div>
     </div>
-     <div class="carousel-item">
-        <h2>ان يخفض الوزن اذا كنت تشكو من السمنة والوزن الزائد</h2> 
-      </div>
+  
   </div>
   </div>
     
@@ -274,7 +272,7 @@ else if($result1['illnesses']=='الضغط'){?>
               
               
                               <?php
-                          $select22 = "select * from gout limit 1 offset $b";
+                          $select22 = "select * from prusure ";
               
                         $runselect22 = mysqli_query($conn,$select22);
                 $numofrwosdia = mysqli_num_rows($runselect22);
@@ -283,9 +281,8 @@ else if($result1['illnesses']=='الضغط'){?>
                 echo "<tr>";									
                                   echo "<td>".$row['breakfast']."</b>"."</td>";
                                   echo "<td>".$row['lunch']."</td>";
-                  echo "<td>".$row['dinner']."</td>";
-                  
-                             echo "</tr>";
+                                  echo "<td>".$row['dinner']."</td>";
+                echo "</tr>";
               }
             }
               else {
