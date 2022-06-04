@@ -14,18 +14,26 @@ $conn = mysqli_connect($servername, $username, $pass,$database);
 if (!$conn) {
 die("Connection failed) ". mysqli_connect_error());
 }
-
 else {
-	$day = time();
-	$time1= strtotime("31-5-2022");
-    $d = $day - $time1;
+  $emaildate = $_SESSION['email']; 
+
+	$day = "select date from user where email = '$emaildate'";
+
+  $rday = mysqli_query($conn,$day);
+  while ($r = mysqli_fetch_assoc($rday)){
+    $te = $r['date'];
+      $time1 = strtotime("$te");
+
+  }
+  $time= time();
+    $d = $time - $time1;
     $c= round($d/(60*60*24));
 	if ($c==3){
 		$c = 0;
 	}
 	    $b = $c - ($c - 1);	
 
-	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset $c";
+	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset $b";
 	$run_select = mysqli_query($conn,$select_data_user);
 	$run_num = mysqli_num_rows($run_select);
 
@@ -106,10 +114,10 @@ else {
   <hr>
 </div>
 <?php
-$selectill = "select illnesses from user where email = '$email' ";
+$selectill = "select ill from ill where email = '$email' ";
 $runselect = mysqli_query($conn,$selectill);
 $result1 = mysqli_fetch_assoc($runselect);
-if ($result1['illnesses']=='السكري'){?>
+if ($result1['ill']=='السكري'){?>
 
 <div class="start-carousel p-3">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -169,7 +177,7 @@ if ($result1['illnesses']=='السكري'){?>
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 						}
 }
-else if($result1['illnesses']=='النقرس'){?>
+else if($result1['ill']=='النقرس'){?>
 <div class="start-carousel p-3">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner text-center">
@@ -232,19 +240,14 @@ else if($result1['illnesses']=='النقرس'){?>
 						}
 	
 }
-else if($result1['illnesses']=='الضغط'){?>
-<<<<<<< HEAD
+else if($result1['ill']=='الضغط'){?>
   <div  class="start-carousel p-3">
-=======
-  <div class="start-carousel p-3">
->>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner text-center">
     <div class='p-3'>
       
     </div>
       <div class="carousel-item active">
-<<<<<<< HEAD
        <h2>شرب من ٨  ل١٢ كوب من الماء</h2>
       </div>
       <div class="carousel-item">
@@ -255,20 +258,6 @@ else if($result1['illnesses']=='الضغط'){?>
       </div>
     </div>
   
-=======
-       <h2></h2>
-      </div>
-      <div class="carousel-item">
-        <h2>الابتعاد عن الدهنيات والاجبان الصفراء والشوكلاته والكاكاو</h2> 
-      </div>
-      <div class="carousel-item">
-        <h2>الكركديه مفيد جدا في حالات النقرس</h2> 
-      </div>
-    </div>
-     <div class="carousel-item">
-        <h2>ان يخفض الوزن اذا كنت تشكو من السمنة والوزن الزائد</h2> 
-      </div>
->>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
   </div>
   </div>
     
@@ -291,27 +280,16 @@ else if($result1['illnesses']=='الضغط'){?>
               
               
                               <?php
-<<<<<<< HEAD
-                          $select22 = "select * from prusure ";
-=======
-                          $select22 = "select * from gout limit 1 offset $b";
->>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
-              
-                        $runselect22 = mysqli_query($conn,$select22);
-                $numofrwosdia = mysqli_num_rows($runselect22);
+                                  $select22 = "select * from prusure ";
+                                  $runselect22 = mysqli_query($conn,$select22);
+                                  $numofrwosdia = mysqli_num_rows($runselect22);
                 if ( $numofrwosdia >0){
                           while($row = mysqli_fetch_assoc($runselect22)){
                 echo "<tr>";									
                                   echo "<td>".$row['breakfast']."</b>"."</td>";
                                   echo "<td>".$row['lunch']."</td>";
-<<<<<<< HEAD
                                   echo "<td>".$row['dinner']."</td>";
                 echo "</tr>";
-=======
-                  echo "<td>".$row['dinner']."</td>";
-                  
-                             echo "</tr>";
->>>>>>> 9b7a717dd1535c82bf74d3aa44749c07883974dd
               }
             }
               else {
@@ -371,24 +349,49 @@ else {
 ?> 
                         </tbody>
                     </table>
-					<td>&nbsp;<button class="btn btn-success bg-white text-success btn-lg" id="Done"
+					<td>&nbsp;
+          <form action="" method="POST">
+          <button type="submit" name="roll" class="btn btn-success bg-white text-success btn-lg" id="Done"
 					style = "width:40vh ;margin : 3vh 50vh ;margin-bottom:0.5vh"
-					
-					
-					>تم انجاز الاعمال اليومية</button></td>
-
+          <?php
+        isset($_SESSION["lock_timestamp_24h"]) &&
+        date('m/d/Y H:i:s', time())  <= date('m/d/Y H:i:s', $_SESSION["lock_timestamp_24h"]) ? 'disabled' : ''
+        ?>>تم انجاز الاعمال اليومية</button>
+        </form>
+      </td>
+      <?php
+if (isset($_POST['roll'])) {
+  if( !isset($_SESSION["lock_timestamp_24h"]) ) {
+      $updatepoint ="UPDATE point set point = point+24 where email = '$email'";
+      $runinsertpoint = mysqli_query($conn,$updatepoint);
+      $_SESSION["lock_timestamp_24h"] = strtotime("+ 1 day", (new DateTime())->getTimestamp());
+   }
+}?>
                     <div class="Pr">
                         <h3>ألانجاز العام</h3>
                         <div class="progress">
                             <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="1"
-                            aria-valuemin="1" aria-valuemax="1500" style="width:0px">
+                            aria-valuemin="1" aria-valuemax="1500" style="width:<?php
+                             $selectpoint = "SELECT point from point where email = '$email'";
+                             $runselectpoint = mysqli_query($conn,$selectpoint);
+                             while($result = mysqli_fetch_assoc($runselectpoint)){
+                                echo $result['point'] ;
+                             }
+                            ?>px">
                             </div>
                           </div>
                           <div class="Prpoint">
                               <br>
-                              <h3> نقاطي = </h3>
+                              <h3> نقاطي = 
+                              <?php 
+                              $selectpoint = "SELECT point from point where email = '$email'";
+                              $runselectpoint = mysqli_query($conn,$selectpoint);
+                              while($result = mysqli_fetch_assoc($runselectpoint)){
+                                echo $result['point'] ;
+                              }
+                              ?></h3>
                           </div>
-                          <div class="points" id="points"></div>
+                         <!--<div class="points" id="points"></div>-->
                           <br><br>
                           <h5>-يتم الحصول على كود خصم بمقدار 25% عند انجاز 500 نقطة فأكثر</h5>
                           <h5>-يتم الحصول على هدية من اختيارك في حال الوصول الى 1000 نقطة في اقل من 50 يوم</h5>

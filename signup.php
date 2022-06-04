@@ -23,13 +23,12 @@ session_start();
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-    1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/signup.css">
-    <script src="js/exercises.js"></script>
   </head>
   
 
@@ -51,7 +50,7 @@ session_start();
        </ul>
       
        </div> <!-- navbar-collapse.// -->
-       <img src="img/logoedit.png" style="height:10vh">
+       <img src="img/A.png" style="height:10vh">
       </div> <!-- container-fluid.// -->
      </nav>
       
@@ -62,17 +61,25 @@ session_start();
         <img src="img/logo.png" alt="">
         </div><h1>مستشارك</h1>
       </header>
-
-
-      <div class="row">
-        <div class="">
-		<?php
-		if(isset($_SESSION['signupcorrect'])){ echo $_SESSION['signupcorrect'];}
+      <div>
+        <div>
+          <br>
+          <br>
+          
+      <?php
+		if(isset($_SESSION['signupcorrect'])){ echo '<div style=" background-color:lightgreen; text-align: center;">'.$_SESSION['signupcorrect'].'</div>';}
 		?>
+    <?php
+		if(isset($_SESSION['emailexist'])){ echo '<div style=" background-color:red; text-align: center;">'.$_SESSION['emailexist'].'</div>';}
+		?>
+    </div>
+</div>
+
+      <div class="row needs-validation" novalidate>
+        <div class="">
             <div class="signup-form">
-			
                 <form class="mt-5 border p-4  shadow" action="signupconn.php" method="POST">
-                    <h2 class="mb-5" id="header">أبدء الرحلة مع مستشارك</h2>
+                    <h2 class="mb-5" id="header">أبداء الرحلة مع مستشارك</h2>
                     <div class="row">
                       <h4 style="margin-bottom:2vh">المعلومات الشخصية</h4>
 
@@ -108,10 +115,10 @@ session_start();
                         </div>
 
 
-                        <div class="mb-3 col-md-6">
-                            <label>كلمة المرور<span class="text-danger"></span></label>
-                            <input required autocomplete="off" id="pass" type="password" name="password" class="form-control" placeholder="*************" >
-                        </div>
+                          <div class="form-outline mb-3 col-md-6">
+                            <label class="form-label" for="form3Example4cg">كلمة المرور</label>
+                            <input type="password"  placeholder="XXXXXX" id="form3Example4cg"  name="password" class="form-control form-control-lg" />
+                          </div>
 
 
                         <h4>المعلومات  الجسدية</h4>
@@ -127,52 +134,48 @@ session_start();
                             <label>الوزن<span class="text-danger"></span></label>
                             <input required autocomplete="off" type="number" name="weight" class="form-control" placeholder="ادخل الوزن بال ( كغ )" >
                         </div>
-
-
-                        <label>الجنس<span class=""></span></label>
-                        <select required class="form-select" name = "gender" id="selectSex" style="width: 30%;" aria-label="Default select example">
-                          <option selected disabled hidden></option>
-                          <option  value="ذكر">ذكر</option>
-                          <option  value="أنثى">أنثى</option>
-                        </select>
-
-
-                      <div  style=" bottom:-39%;
-                      left: 28%;
-                      position:absolute;
-                      width:30%">
-                        <label>امراض مزمنة<span class="" ></span></label>
-                        <select required class="form-select " name="illnesses" aria-label="Default select example">
-
-                          <option selected disabled hidden></option>
-                          <option value="السكري">السكري</option>
-                          <option value="الضغط">الضغط</option>
-                          <option value="النقرس">النقرس</option>
-                          <option value="لا أعاني من اي مرض مزمن">لا أعاني من اي مرض مزمن </option>
-                        </select> 
+                        <div class="mb-3 col-md-4 " style="width : 34%; margin-right : -1vh">
+                          <label>الجنس<span class=""></span></label>
+                          <br>
+                          <select required class="form-select" name = "gender" id="selectSex"  aria-label="Default select example">
+                           <option selected disabled hidden></option>
+                            <option  value="ذكر">ذكر</option>
+                            <option  value="أنثى">أنثى</option>
+                          </select>
+                          
                       </div>
-                      </div>
+                      <label class="form-check-label" for="inlineCheckbox1">الامراض</label>
+                      <div class="form-check form-check-inline mb-3 col-md-2">
+                        <label class="form-check-label" for="inlineCheckbox1">السكري</label>
+                        <input class="form-check-input" style="margin-left:0px" type="checkbox" id="inlineCheckbox1" name="illnesses[]" value="السكري" />
+                      </div>  
+                      <div class="form-check form-check-inline mb-3 col-md-2">
+                        <label class="form-check-label" for="inlineCheckbox1">الضغط</label>
+                        <input class="form-check-input" style="margin-left:0px" type="checkbox" id="inlineCheckbox1"  name="illnesses[]" value="الضغط" />
+                      </div>  
+                      <div class="form-check form-check-inline mb-3 col-md-2">
+                        <label class="form-check-label" for="inlineCheckbox1">النقرس</label>
+                        <input class="form-check-input" style="margin-left:0px" type="checkbox" id="inlineCheckbox1" name="illnesses[]" value="النقرس" />
+                      </div>  
+                      <!-- <div class="form-check form-check-inline mb-3 col-md-2">
+                        <input class="form-check-input"  style="margin-left:20px"  onclick="var input = document.getElementById('name2'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}"
+                        type="checkbox" id="inlineCheckbox1" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">اخرى</label>
+                        <input type="text"  style="width:150%" class="form-control form-control" id="name2" disabled placeholder="اذكرها هنا " />-->
+
+
+                      </div>  
                       <br>
                       <div class="col-md-12" id="end" style="border:none" >
-                        <button type="submit" input="submit"  class="btn btn-outline-success bg-white float-end btn-lg" name="done"  id="submit" style="margin-top:-3vh">سجل الان</button>
-                    </div></div></form></div></div></div></div>
+                        <button type="submit" input="submit" name="done" class="btn btn-outline-success bg-white float-end btn-lg"  id="submit" style="margin-top:-3vh">سجل الان</button>
+                    </div></div></form></div></div></div>
+                  </div>
 
-  <article style="  width:20%;
-  height: auto;
-  float: right;
-  text-decoration: underline;
-  background-color:white;
-  color: #00970B;
-  cursor:pointer;
-  transition: all .1s;
-  height: content;">
-    <h3>
-      <a href='Home.php'>الصفحة الرئيسية </a>
-    </h3>
-  </article>
+ 
+ <a href="Home.php" ><button   class="btn btn-success  btn-lg" style="margin-left:85vh" >الصفحة الرئيسية</button></a>
 <!--start section our footer-->
 <!-- Footer -->
-<footer class="footer text-center text-lg-start bg-dark text-muted">
+<footer class="footer text-center text-lg-start bg-dark text-muted" style="margin-top:10vh">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -272,15 +275,7 @@ session_start();
 
 
   <script type="text/javascript">
-  var pass = document.getElementById("pass");
-  pass.addEventListener("mouseover", function () {
-    console.log("Ahmed");
-    pass.type = "text";
-  })
-  pass.addEventListener("mouseleave", function () {
-    console.log("Ahmed");
-    pass.type = "password";
-  })
+
   </script>
 
 
