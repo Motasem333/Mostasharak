@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7d59b0174e2324362cb8f98f0529ba59c7a4808
 <?php
 $servername = "localhost";
 $username = "root";
@@ -89,8 +92,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
          </button>
          <div class="collapse navbar-collapse " id="main_nav">
          <ul class="items navbar-nav ms-auto">
+<<<<<<< HEAD
            <li class="nav-item active"> <a class="nav-link" href="Home.php">الصفحة الرئيسية </a> </li>
   
+=======
+           <li class="nav-item active"> <a class="nav-link" href="main.php">الصفحة الرئيسية </a> </li>
+           <li class="nav-item active"> <a class="nav-link" href="logout.php">خروج  </a> </li>
+
+>>>>>>> b7d59b0174e2324362cb8f98f0529ba59c7a4808
          </ul>
         
          </div> <!-- navbar-collapse.// -->
@@ -109,10 +118,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 <div class="container">
         <div class="Sec1">
             <div class="head">
+<<<<<<< HEAD
                 <h1>توصل معنا للأجابة عن الاستفسارات </h1>
                 <br>
                 <p>يمكنك ارسال ( اسألة , استفسارات , اقتراحات او شكاوى )</p>
                 <p>سوف يتم قراة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
+=======
+                <h1>تواصل معنا للأجابة عن الاستفسارات </h1>
+                <br>
+                <p>يمكنك ارسال ( اسألة , استفسارات , اقتراحات او شكاوى )</p>
+                <p>سوف يتم قراءة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
+>>>>>>> b7d59b0174e2324362cb8f98f0529ba59c7a4808
             </div>
             <br><br>
 			<form action="" method="POST">
@@ -132,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 			  </form>
         </div>
 
-      <!--  <div class="Sec1" style="height:auto ; margin-bottom: 10vh; padding-bottom:4vh" >
+        <div class="Sec1" style="height:auto ; margin-bottom: 10vh; padding-bottom:4vh" >
             <div class="head">
                 <h1>الاسئلة الاكثر تكرار</h1>
 
@@ -143,39 +159,40 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      كيف استفيد من 
+                      كيف يتم حساب كتلة الجسم 
                     </button>
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      <p>حاسبة مؤشر كتلة الجسم ( BMI - Body Mass Index) هي أداة لتقييم الوزن الطبيعي أو زيادة الوزن. ويتم تقييم الوزن من خلال استخدام مؤشر كتلة الجسم الذي يفحص العلاقة بين طول ووزن الجسم.
+<br>
+يتم الحساب كما يلي:
+<br>
+مؤشر كتلة الجسم (BMI 🙁 الطول بالمتر X الطول بالمتر / وزن الجسم بالكيلوغرام (يرجى قراءة المعادلة من اليسار إلى اليمين)</p>
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Accordion Item #2
+                    كيف يتم حساب عدد السعرات الحرارية
                     </button>
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+                    <div class="accordion-body"> يعتمد عدد السعرات الحرارية التي يحتاجها الجسم على عدة عوامل أهمها وزن الجسم، وطوله، والعمر، والجنس، ومعدل النشاط البدني، ولحساب السعرات اليومية يجب أولاً حساب معدل الحرق الأساسي؛ والذي يعرف بأنه عدد السعرات الحرارية اليومية اللازمة لبقاء الجسم حياً، ثم حساب إجمالي السعرات الحرارية التي يحتاجها الجسم للقيام بجميع الأنشطة اليومية والرياضية من خلال ضرب معدل الحرق الأساسي في معامل النشاط البدني،   :</div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Accordion Item #3
+                    كيف اختيار الجدول الغذائي
                     </button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+                      <p>من خلال تحليل البيانات عند التسجيل مع مستشارك </p>                    </div>
                   </div>
-                </div>-->
+                </div>
               </div>
         </div>
     </div>
@@ -253,9 +270,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              تواصل معنا
-            </h6>
+            <p>
+              <a href="contact.php" class="text-reset" > تواصل معنا</a>
+            </p>
+          
             
             <p>
               <i class="fas fa-envelope me-3"></i>

@@ -14,18 +14,26 @@ $conn = mysqli_connect($servername, $username, $pass,$database);
 if (!$conn) {
 die("Connection failed) ". mysqli_connect_error());
 }
-
 else {
-	$day = time();
-	$time1= strtotime("31-5-2022");
-    $d = $day - $time1;
+  $emaildate = $_SESSION['email']; 
+
+	$day = "select date from user where email = '$emaildate'";
+
+  $rday = mysqli_query($conn,$day);
+  while ($r = mysqli_fetch_assoc($rday)){
+    $te = $r['date'];
+      $time1 = strtotime("$te");
+
+  }
+  $time= time();
+    $d = $time - $time1;
     $c= round($d/(60*60*24));
 	if ($c==3){
 		$c = 0;
 	}
 	    $b = $c - ($c - 1);	
 
-	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset 1";
+	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset $b";
 	$run_select = mysqli_query($conn,$select_data_user);
 	$run_num = mysqli_num_rows($run_select);
 
@@ -60,29 +68,7 @@ else {
 </head>
 <body>
     <div class="">
-      <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
-      <div class="container-fluid">
-       
-       
-       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
-           <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse " id="main_nav">
-       <ul class="items navbar-nav ms-auto">
-         <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">الصفحة الرئيسية </a> </li>
-		 <li class="nav-item active"> <a class="nav-link" href="store.html" style="color:white">المتجر </a> </li>
-		 <li class="nav-item active"> <a class="nav-link" href="exercises.html" style="color:white">التمارين </a> </li>
-         <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
-
-
-       </ul>
-      
-       </div> <!-- navbar-collapse.// -->
-       <img src="img/logoedit.png" style="height:10vh">
-      </div> <!-- container-fluid.// -->
-     </nav>
-   
-
+      <?php include "navbar.php";?>
     <header>
 	
         <div class="logo">
@@ -106,10 +92,10 @@ else {
   <hr>
 </div>
 <?php
-$selectill = "select illnesses from user where email = '$email' ";
+$selectill = "select ill from ill where email = '$email' ";
 $runselect = mysqli_query($conn,$selectill);
 $result1 = mysqli_fetch_assoc($runselect);
-if ($result1['illnesses']=='السكري'){?>
+if ($result1['ill']=='السكري'){?>
 
 <div class="start-carousel p-3">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -169,7 +155,7 @@ if ($result1['illnesses']=='السكري'){?>
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 						}
 }
-else if($result1['illnesses']=='النقرس'){?>
+else if($result1['ill']=='النقرس'){?>
 <div class="start-carousel p-3">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner text-center">
@@ -233,7 +219,7 @@ else if($result1['illnesses']=='النقرس'){?>
             
 	
 }
-else if($result1['illnesses']=='الضغط'){?>
+else if($result1['ill']=='الضغط'){?>
   <div  class="start-carousel p-3">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner text-center">
@@ -273,10 +259,9 @@ else if($result1['illnesses']=='الضغط'){?>
               
               
                               <?php
-                          $select22 = "select * from prusure ";
-              
-                        $runselect22 = mysqli_query($conn,$select22);
-                $numofrwosdia = mysqli_num_rows($runselect22);
+                                  $select22 = "select * from prusure ";
+                                  $runselect22 = mysqli_query($conn,$select22);
+                                  $numofrwosdia = mysqli_num_rows($runselect22);
                 if ( $numofrwosdia >0){
                           while($row = mysqli_fetch_assoc($runselect22)){
                 echo "<tr>";									
@@ -343,29 +328,139 @@ else {
 ?> 
                         </tbody>
                     </table>
-					<td>&nbsp;<button class="btn btn-success bg-white text-success btn-lg" id="Done"
+					<td>&nbsp;
+          <form action="" method="POST">
+          <button type="submit" name="roll" class="btn btn-success bg-white text-success btn-lg" id="Done"
 					style = "width:40vh ;margin : 3vh 50vh ;margin-bottom:0.5vh"
-					
-					
-					>تم انجاز الاعمال اليومية</button></td>
-
+          <?php
+        isset($_SESSION["lock_timestamp_24h"]) &&
+        date('m/d/Y H:i:s', time())  <= date('m/d/Y H:i:s', $_SESSION["lock_timestamp_24h"]) ? 'disabled' : ''
+        ?>>تم انجاز الاعمال اليومية</button>
+        </form>
+      </td>
+      <?php
+if (isset($_POST['roll'])) {
+  if( !isset($_SESSION["lock_timestamp_24h"]) ) {
+      $updatepoint ="UPDATE point set point = point+24 where email = '$email'";
+      $runinsertpoint = mysqli_query($conn,$updatepoint);
+      $_SESSION["lock_timestamp_24h"] = strtotime("+ 1 day", (new DateTime())->getTimestamp());
+   }
+}?>
                     <div class="Pr">
                         <h3>ألانجاز العام</h3>
                         <div class="progress">
                             <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="1"
-                            aria-valuemin="1" aria-valuemax="1500" style="width:0px">
+                            aria-valuemin="1" aria-valuemax="1500" style="width:<?php
+                             $selectpoint = "SELECT point from point where email = '$email'";
+                             $runselectpoint = mysqli_query($conn,$selectpoint);
+                             while($result = mysqli_fetch_assoc($runselectpoint)){
+                                $po=  $result['point'] ; echo $po;
+                             }
+                            ?>px">
                             </div>
                           </div>
                           <div class="Prpoint">
                               <br>
-                              <h3> نقاطي = </h3>
+                              <h3> نقاطي = 
+                              <?php 
+                              $selectpoint = "SELECT point from point where email = '$email'";
+                              $runselectpoint = mysqli_query($conn,$selectpoint);
+                              while($result = mysqli_fetch_assoc($runselectpoint)){
+                                echo $result['point'] ;
+                              }
+?>
+<!------------------------------------------------------------------------------->
+<script>
+  $(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 4000,
+easing: 'swing',
+step: function (now) {
+    $(this).text(Math.ceil(now));
+}
+});
+});  
+
+    
+      
+        
+
+            document.getElementById("Get1").addEventListener("click",code);
+            function code()
+            {
+                document.getElementById("Get0").style.display = "initial";
+                document.getElementById("cancel").style.display = "initial";
+            if (<?=$po?> <500){
+                document.getElementById("Get0").innerHTML = "لم يتم الحصول على عدد نقاط كافي"
+                document.getElementById("Get0").style.marginRight = "3vh";   
+            }
+            if (<?=$po?> >=500){
+                function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+                }
+                document.getElementById('Get0').innerHTML = <?php echo rand(111111,999999);?>;
+                document.getElementById("Get0").style.marginRight = "3vh";
+                document.getElementById("Get1").setAttribute('disabled', 'disabled')    
+            }
+            }
+            
+
+            document.getElementById("Get2").addEventListener("click",code2);
+            function code2()
+            {
+                document.getElementById("Get02").style.display = "initial";
+                document.getElementById("cancel2").style.display = "initial";
+            if (<?=$po?> <1000){
+                document.getElementById("Get02").innerHTML = "لم يتم الحصول على عدد نقاط كافي"
+                document.getElementById("Get02").style.marginRight = "3vh";   
+            }
+            if (<?=$po?> >1000){
+                function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+                }
+                document.getElementById('Get02').innerHTML = <?php echo rand(111111,999999);?>; 
+                document.getElementById("Get02").style.marginRight = "3vh";
+                document.getElementById("Get2").setAttribute('disabled', 'disabled')    
+            }
+            }
+
+            document.getElementById("cancel2").addEventListener("click",cancel2);
+            function cancel2()
+            { 
+                document.getElementById("Get02").style.display = "none";
+                document.getElementById("cancel2").style.display = "none";
+                document.getElementById("Get02").style.marginRight = "-40vh";
+            }
+            document.getElementById("cancel").addEventListener("click",cancel);
+            function cancel()
+            { 
+                document.getElementById("Get0").style.display = "none";
+                document.getElementById("cancel").style.display = "none";
+                document.getElementById("Get0").style.marginRight = "-40vh";
+            }})
+
+</script>
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------->
+</h3>
                           </div>
-                          <div class="points" id="points"></div>
+                          <!--<div class="points" id="points" style= "display:none;"></div>-->
                           <br><br>
                           <h5>-يتم الحصول على كود خصم بمقدار 25% عند انجاز 500 نقطة فأكثر</h5>
                           <h5>-يتم الحصول على هدية من اختيارك في حال الوصول الى 1000 نقطة في اقل من 50 يوم</h5>
                           <h5>-استخدم كود الهدية او الخصم في المتجر لتفعيلهما </h5>
-                          <button class="btn btn-outline-success btn-lg bg-white" id="Get1">طلب الحصول على خصم</button>
+                          <button type="submit"class="btn btn-outline-success btn-lg bg-white" id="Get1">طلب الحصول على خصم</button>
                           <button class="btn btn-outline-success btn-lg bg-white" id="Get0" style="pointer-events:none">XXXXXX </button>
                           <img src="img/cancel.png"  id="cancel"alt="">
                           <br><br>
@@ -445,105 +540,7 @@ else {
  <div>
  
 
-
-<!--start section our footer-->
-<!-- Footer -->
-<footer class="footer text-center text-lg-start bg-dark text-muted" style="direction:rtl">
-  <!-- Section: Social media -->
-  <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-  >
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>تواصل معنا عبر المنصات الاجتماعية</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
-    <div>
-      <a href="https://www.facebook.com/" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.twitter.com" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.google.com" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="https://www.instagram.com" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.github.com" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4 ">
-            <i class="fas fa-gem me-3"></i>مستشارك
-          </h6>
-          <p>هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات الصحية
-          </p>
-        </div>
-        <!-- Grid column -->
-
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          
-          <p>
-            <a href="guest.html" class="text-reset">صفحة الضيف</a>
-          </p>
-          <p>
-            <a href="store.html" class="text-reset" >المتجر</a>
-          </p>
-          
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            تواصل معنا
-          </h6>
-          
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            contact@mostasharak.com
-          </p>
-          <p><i class="fas fa-phone me-3"> </i>9999 9999 9627+</p>
-          
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-   Mostasharak © 2022 
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
-<!--end section our footer-->
+<?php include "footer.php";?>
 </html>
 
 <?php
@@ -554,4 +551,3 @@ else{
 }
 ?>
 
-</body>

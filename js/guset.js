@@ -1,3 +1,4 @@
+console.log('dasjdlkasjl');
 document.getElementById("myRange").addEventListener("input",displayDate);
 function displayDate()
 {
@@ -156,4 +157,14 @@ if (gender == 0 && select==1.725)
 re = (female*1.725).toString();
 document.getElementById('cal').innerHTML = re.substring(0,6);
 }
+}
+function gitVal2(){
+   if (document.getElementById('select').value ==  0 ||  document.getElementById('gender').value ==  0){
+    Swal.fire({
+        title: 'معلومات غير كاملة',
+        text: 'تأكد من ادخال جميع المعلومات ',
+        icon: 'error',
+        confirmButtonText: 'حسنا'
+      })
+   }
 }

@@ -317,7 +317,7 @@ if (isset($_POST['search_all_users'])){
 					<th>الجنس</th>
 					<th>كلمة المرور</th>
                     <th>الهاتف</th>
-                    <th>المرض</th>
+                    <th>تاريخ التسجيل</th>
 					<th>المنصب</th>
 				</tr>
             </thead>
@@ -335,7 +335,7 @@ if (isset($_POST['search_all_users'])){
 									echo "<td>".$row["gender"]."</td>";
 									echo "<td>".$row["password"]."</td>";
 									echo "<td>".$row["phone_number"]."</td>";
-									echo "<td>".$row["illnesses"]."</td>";
+									echo "<td>".$row["date"]."</td>";
 									echo "<td>".$row["role"]."</td>";
 						echo "</tr>";
 				
@@ -350,10 +350,11 @@ if (isset($_POST['search_all_users'])){
 				  
 <?php
 if(isset($_POST['searchdata'])){
-	$illn = $_POST['illnessesretrive'];
+	//$illn = $_POST['illnessesretrive'];
+
 	$gender = $_POST['genderdata'];
 	$age = $_POST['agedata'];
-	$selectformuser = "select * from user where illnesses='$illn' and gender='$gender' and age ='$age'";
+	$selectformuser = "select * from user where  gender='$gender' and age ='$age'";
 	$run_selectformuser= mysqli_query($conn,$selectformuser);
 	$numofrowse = mysqli_num_rows($run_selectformuser);?>
 	<div class="Shecdule">
@@ -369,7 +370,7 @@ if(isset($_POST['searchdata'])){
 					<th>الجنس</th>
 					<th>كلمة المرور</th>
                     <th>الهاتف</th>
-                    <th>المرض</th>
+                    <th>تاريخ التسجيل</th>
 					<th>المنصب</th>
 				</tr>
             </thead>
@@ -387,7 +388,7 @@ if(isset($_POST['searchdata'])){
 									echo "<td>".$row["gender"]."</td>";
 									echo "<td>".$row["password"]."</td>";
 									echo "<td>".$row["phone_number"]."</td>";
-									echo "<td>".$row["illnesses"]."</td>";
+									echo "<td>".$row["date"]."</td>";
 									echo "<td>".$row["role"]."</td>";
 						echo "</tr>";
 				
@@ -444,7 +445,7 @@ if(isset($_POST['searchdata'])){
 					<th>الجنس</th>
 					<th>كلمة المرور</th>
                     <th>الهاتف</th>
-                    <th>المرض</th>
+                    <th>تاريخ التسجيل</th>
 					<th>المنصب</th>
 				</tr>
             </thead>
@@ -462,7 +463,7 @@ if(isset($_POST['searchdata'])){
 									echo "<td>".$row["gender"]."</td>";
 									echo "<td>".$row["password"]."</td>";
 									echo "<td>".$row["phone_number"]."</td>";
-									echo "<td>".$row["illnesses"]."</td>";
+									echo "<td>".$row["date"]."</td>";
 									echo "<td>".$row["role"]."</td>";
 						echo "</tr>";
 				
@@ -642,7 +643,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $insertttt ="in)";
 	
 */
-
+}
 ?>
 
 </div>
@@ -653,11 +654,10 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 <div style=" display:block; margin-left:50vh;margin-top:25vh ; color : white ; font-size:1.15rem ; line-height:200% ;">
 
 <?php
-if (isset($_POST['test'])){
 $select_data_user = "select * from user";
 	$run_select_data_user = mysqli_query($conn,$select_data_user);
 	$num_of_rows = mysqli_num_rows($run_select_data_user);
-	echo "عدد المسجلين  : " .$num_of_rows ;
+	echo "عدد المسجلين  : ".$num_of_rows;
 	echo "<br>";
 	$greater = "select * from user where age >= 18";
 	$run_greater = mysqli_query($conn,$greater);
@@ -680,26 +680,26 @@ $select_data_user = "select * from user";
 	$num_of_rowsfemale = mysqli_num_rows($run_female);
 	echo "عدد المستخدمين الاناث : " .$num_of_rowsfemale ;
 	echo "<br>";
-    $illnesses = "select * from user where illnesses='null' or illnesses='لا أعاني من اي مرض مزمن'";
+    $illnesses = "select * from ill where ill='لا أعاني من اي مرض مزمن'";
 	$run_illnesses = mysqli_query($conn,$illnesses);
 	$num_of_noneillnesses = mysqli_num_rows($run_illnesses);
 	echo " عدد المستخدمين  الذين لا يعانون من امراض : " .$num_of_noneillnesses ;
 	echo "<br>";
-    $illnessesD = "select * from user where illnesses='السكري'";
+    $illnessesD = "select * from ill where ill='السكري'";
 	$run_illnessesD = mysqli_query($conn,$illnessesD);
 	$num_of_illD = mysqli_num_rows($run_illnessesD);
 	echo "عدد المستخدمين الذين يعانون من السكري :  " .$num_of_illD ;
 	echo "<br>";
-    $illnessesP = "select * from user where illnesses='الضغط'";
+    $illnessesP = "select * from ill where ill ='الضغط'";
 	$run_illnessesP = mysqli_query($conn,$illnessesP);
 	$num_of_illP = mysqli_num_rows($run_illnessesP);
 	echo "عدد المستخدمين الذين يعانون من الضغط : " .$num_of_illP;
 	echo "<br>";
-    $illnessesN = "select * from user where illnesses='النقرس'";
+    $illnessesN = "select * from ill where ill='النقرس'";
 	$run_illnessesN = mysqli_query($conn,$illnessesN);
 	$num_of_illN = mysqli_num_rows($run_illnessesN);
 	echo " عدد المستخدمين الذين يعانون من النقرس : " .$num_of_illN ;
-}
+
 	?>
 </div>
 </div>
@@ -708,7 +708,7 @@ $select_data_user = "select * from user";
 <?php
 
 }
-}
+
 else {
 	header('location:Home.php');
 }
