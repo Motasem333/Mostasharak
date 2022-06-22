@@ -216,7 +216,6 @@ else if($result1['ill']=='النقرس'){?>
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 						}
-            
 	
 }
 else if($result1['ill']=='الضغط'){?>
