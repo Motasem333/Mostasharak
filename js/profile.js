@@ -1,4 +1,4 @@
-
+console.log('nadeem')
 function editName (){
     document.getElementById("name").disabled = false;
     document.getElementById("name").removeAttribute( "value" );
@@ -19,10 +19,9 @@ function edittel (){
     document.getElementById("tel").removeAttribute( "value" );
 
 }
-function editWieght (){
-    document.getElementById("wieght").disabled = false;
-    document.getElementById("wieght").removeAttribute( "value" );
-
+function editWieght1 (){
+    document.getElementById("weight").disabled = false;
+    document.getElementById("weight").removeAttribute( "value" );
 }
 
 function  editHeight(){
@@ -31,20 +30,13 @@ function  editHeight(){
 
 }
 
-function  editemail(){
+function  editemail1(){
     document.getElementById("email").disabled = false;
-    document.getElementById("editemail").removeAttribute( "value" );
-
+    document.getElementById("email").removeAttribute( "value" );
 }
 
-function  editemail(){
-    document.getElementById("email").disabled = false;
-    document.getElementById("editemail").removeAttribute( "value" );
-
-}
-
-function  editpass(){
-    document.getElementById("pass").disabled = false;
-    document.getElementById("editpass").removeAttribute( "value" );
+function  editpassword(){
+    document.getElementById("password").disabled = false;
+    document.getElementById("password").removeAttribute( "value" );
 
 }

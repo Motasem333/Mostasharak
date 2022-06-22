@@ -67,7 +67,7 @@ else {
 		$runinsert2 = mysqli_query($conn,$insert_email_point);
 
 		$_SESSION['signupcorrect']= 'تم التسجيل بنجاح! اهلا بك في مستشارك' ;
-	    header('location:signup.php');
+	    header('location:Home.php');
 		}
 
 		}

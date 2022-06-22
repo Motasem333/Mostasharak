@@ -61,26 +61,7 @@ while($r = mysqli_fetch_assoc($runselectP)){
 </head>
 <body>
     <div class="">
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container-fluid">
-         
-         
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
-             <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse " id="main_nav">
-         <ul class="items navbar-nav ms-auto">
-           <li class="nav-item active"> <a class="nav-link" href="main.php">الصفحة الرئيسية </a> </li>
-           <li class="nav-item active"> <a class="nav-link" href="logout.php"> خروج </a> </li>
-
-         </ul>
-        
-         </div> <!-- navbar-collapse.// -->
-         <img src="img/A.png" style="height:10vh">
-        </div> <!-- container-fluid.// -->
-       </nav>
-        
-        
+        <?php include "navbar.php";?>
         <header>
           
           <div class="logo">
@@ -108,12 +89,12 @@ while($r = mysqli_fetch_assoc($runselectP)){
 
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">كلمة السر  : </label>
-                    <input type="text" name="password" id="pass" class="form-control rounded d-inline" style="width:26%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $password;?>"/>
-                    <button type="button"  id="editpass" class="btn btn-outline-success bg-white"  onclick="editpass()">تعديل</button>
+                    <input type="text" name="password" id="password" class="form-control rounded d-inline" style="width:26%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $password;?>"/>
+                    <button type="button"  id="editpass" class="btn btn-outline-success bg-white"  onclick="editpassword()">تعديل</button>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh;">البريد الالكتروني : </label>
                     <input type="email" id="email" name="email" class="form-control rounded d-inline" style="width:22%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $email;?>"/>
-                    <button type="button" id="editemail" class="btn btn-outline-success bg-white" onclick="editemail()">تعديل</button>
+                    <button type="button" id="editemail" class="btn btn-outline-success bg-white" onclick="editemail1()">تعديل</button>
 
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">العمر :  </label>
@@ -131,8 +112,8 @@ while($r = mysqli_fetch_assoc($runselectP)){
                 <div class="edit_section">
                     
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الوزن :  </label>
-                    <input type="number" id="weight" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $w;?>"/>
-                    <button type="button"  id="edit5" class="btn btn-outline-success bg-white" onclick="editWieght()">تعديل</button>
+                    <input type="number" name="weight" id="weight" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $w;?>"/>
+                    <button type="button"  id="editweight" class="btn btn-outline-success bg-white" onclick="editWieght1()">تعديل</button>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الطول :  </label>
                     <input type="number" name="hieght" id="height" class="form-control rounded d-inline" style="width:28.5%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $h;?>"/>
@@ -187,108 +168,13 @@ if (isset($_POST['hieght'])){
 }
 }
 
-?>
-        <!--start section our footer-->
-<!-- Footer -->
-<footer class="footer text-center text-lg-start bg-dark text-muted" style="margin-top:10vh">
-    <!-- Section: Social media -->
-    <section
-      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-    >
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>تواصل معنا عبر المنصات الاجتماعية</span>
-      </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="https://www.facebook.com/" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.twitter.com" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.google.com" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="https://www.instagram.com" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://www.github.com" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4 ">
-              <i class="fas fa-gem me-3"></i>مستشارك
-            </h6>
-            <p>هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات الصحية
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            
-            <p>
-              <a href="guest.html" class="text-reset">صفحة الضيف</a>
-            </p>
-            <p>
-              <a href="store.html" class="text-reset" >المتجر</a>
-            </p>
-            
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              تواصل معنا
-            </h6>
-            
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              contact@mostasharak.com
-            </p>
-            <p><i class="fas fa-phone me-3"> </i>9999 9999 9627+</p>
-            
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-     Mostasharak © 2022 
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-  <!--end section our footer-->
+include "footer.php";
+
+?>   
 
 </body>
 </html
+
 <?php
 }
 else {

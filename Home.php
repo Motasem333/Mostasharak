@@ -26,7 +26,11 @@ session_start();
     </video>
 
   </div>
-  
+  <div>
+  <?php
+		if(isset($_SESSION['signupcorrect'])){ echo '<div style=" background-color:lightgreen; text-align: center; font-size:20px;">'.$_SESSION['signupcorrect'].'</div>';}
+		?>
+  </div>
 
 
 <div class="container">
@@ -58,7 +62,7 @@ session_start();
      </div>
 
 
-     <div class = "aboutus col-lg-5 pt-0 ">
+     <div class = "aboutus col-lg-4 pt-5 ">
      
      <!--<div class = "rtlp col-lg-8 pt-4 ">-->
      

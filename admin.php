@@ -643,7 +643,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $insertttt ="in)";
 	
 */
-
+}
 ?>
 
 </div>
@@ -654,11 +654,10 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 <div style=" display:block; margin-left:50vh;margin-top:25vh ; color : white ; font-size:1.15rem ; line-height:200% ;">
 
 <?php
-if (isset($_POST['test'])){
 $select_data_user = "select * from user";
 	$run_select_data_user = mysqli_query($conn,$select_data_user);
 	$num_of_rows = mysqli_num_rows($run_select_data_user);
-	echo "عدد المسجلين  : " .$num_of_rows ;
+	echo "عدد المسجلين  : ".$num_of_rows;
 	echo "<br>";
 	$greater = "select * from user where age >= 18";
 	$run_greater = mysqli_query($conn,$greater);
@@ -700,7 +699,7 @@ $select_data_user = "select * from user";
 	$run_illnessesN = mysqli_query($conn,$illnessesN);
 	$num_of_illN = mysqli_num_rows($run_illnessesN);
 	echo " عدد المستخدمين الذين يعانون من النقرس : " .$num_of_illN ;
-}
+
 	?>
 </div>
 </div>
@@ -709,7 +708,7 @@ $select_data_user = "select * from user";
 <?php
 
 }
-}
+
 else {
 	header('location:Home.php');
 }

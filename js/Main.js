@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
     $('.counter').each(function () {
 $(this).prop('Counter',0).animate({
@@ -22,8 +22,8 @@ $(this).prop('Counter',0).animate({
                         let Pr = document.getElementById("Done").style.width
                     }
                 }*/
-				
-                let Pr = document.getElementById("progress-bar");
+			/*	
+              let Pr = document.getElementById("progress-bar");
                 Prw = Pr.style.width;
                 console.log(Prw);
                 function m(str){
@@ -46,7 +46,7 @@ $(this).prop('Counter',0).animate({
                 }
 
 
-               
+            
 
                 document.getElementById("Get1").addEventListener("click",code);
                 function code()
@@ -101,3 +101,4 @@ $(this).prop('Counter',0).animate({
                     document.getElementById("cancel").style.display = "none";
                     document.getElementById("Get0").style.marginRight = "-40vh";
                 }})
+*/

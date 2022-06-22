@@ -68,32 +68,7 @@ else {
 </head>
 <body>
     <div class="">
-      <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
-      <div class="container-fluid">
-       
-       
-       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
-           <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse " id="main_nav">
-       <ul class="items navbar-nav ms-auto">
-         <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">الصفحة الرئيسية </a> </li>
-		 <li class="nav-item active"> <a class="nav-link" href="store.html" style="color:white">المتجر </a> </li>
-		 <li class="nav-item active"> <a class="nav-link" href="exercises.html" style="color:white">التمارين </a> </li>
-     <li class="nav-item active"> <a class="nav-link" href="profile.php" style="color:white">المعلومات الشخصية </a> </li>
-     <li class="nav-item active"> <a class="nav-link" href="contact.php" style="color:white"> تواصل معنا </a> </li>
-
-         <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
-
-
-       </ul>
-      
-       </div> <!-- navbar-collapse.// -->
-       <img src="img/logoedit.png" style="height:10vh">
-      </div> <!-- container-fluid.// -->
-     </nav>
-   
-
+      <?php include "navbar.php";?>
     <header>
 	
         <div class="logo">
@@ -378,7 +353,7 @@ if (isset($_POST['roll'])) {
                              $selectpoint = "SELECT point from point where email = '$email'";
                              $runselectpoint = mysqli_query($conn,$selectpoint);
                              while($result = mysqli_fetch_assoc($runselectpoint)){
-                                echo $result['point'] ;
+                                $po=  $result['point'] ; echo $po;
                              }
                             ?>px">
                             </div>
@@ -392,7 +367,92 @@ if (isset($_POST['roll'])) {
                               while($result = mysqli_fetch_assoc($runselectpoint)){
                                 echo $result['point'] ;
                               }
-                              ?></h3>
+?>
+<!------------------------------------------------------------------------------->
+<script>
+  $(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 4000,
+easing: 'swing',
+step: function (now) {
+    $(this).text(Math.ceil(now));
+}
+});
+});  
+
+    
+      
+        
+
+            document.getElementById("Get1").addEventListener("click",code);
+            function code()
+            {
+                document.getElementById("Get0").style.display = "initial";
+                document.getElementById("cancel").style.display = "initial";
+            if (<?=$po?> <500){
+                document.getElementById("Get0").innerHTML = "لم يتم الحصول على عدد نقاط كافي"
+                document.getElementById("Get0").style.marginRight = "3vh";   
+            }
+            if (<?=$po?> >=500){
+                function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+                }
+                document.getElementById('Get0').innerHTML = <?php echo rand(111111,999999);?>;
+                document.getElementById("Get0").style.marginRight = "3vh";
+                document.getElementById("Get1").setAttribute('disabled', 'disabled')    
+            }
+            }
+            
+
+            document.getElementById("Get2").addEventListener("click",code2);
+            function code2()
+            {
+                document.getElementById("Get02").style.display = "initial";
+                document.getElementById("cancel2").style.display = "initial";
+            if (<?=$po?> <1000){
+                document.getElementById("Get02").innerHTML = "لم يتم الحصول على عدد نقاط كافي"
+                document.getElementById("Get02").style.marginRight = "3vh";   
+            }
+            if (<?=$po?> >1000){
+                function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+                }
+                document.getElementById('Get02').innerHTML = <?php echo rand(111111,999999);?>; 
+                document.getElementById("Get02").style.marginRight = "3vh";
+                document.getElementById("Get2").setAttribute('disabled', 'disabled')    
+            }
+            }
+
+            document.getElementById("cancel2").addEventListener("click",cancel2);
+            function cancel2()
+            { 
+                document.getElementById("Get02").style.display = "none";
+                document.getElementById("cancel2").style.display = "none";
+                document.getElementById("Get02").style.marginRight = "-40vh";
+            }
+            document.getElementById("cancel").addEventListener("click",cancel);
+            function cancel()
+            { 
+                document.getElementById("Get0").style.display = "none";
+                document.getElementById("cancel").style.display = "none";
+                document.getElementById("Get0").style.marginRight = "-40vh";
+            }})
+
+</script>
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------------->
+</h3>
                           </div>
                           <!--<div class="points" id="points" style= "display:none;"></div>-->
                           <br><br>
@@ -479,105 +539,7 @@ if (isset($_POST['roll'])) {
  <div>
  
 
-
-<!--start section our footer-->
-<!-- Footer -->
-<footer class="footer text-center text-lg-start bg-dark text-muted" style="direction:rtl">
-  <!-- Section: Social media -->
-  <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-  >
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>تواصل معنا عبر المنصات الاجتماعية</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
-    <div>
-      <a href="https://www.facebook.com/" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.twitter.com" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.google.com" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="https://www.instagram.com" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://www.github.com" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4 ">
-            <i class="fas fa-gem me-3"></i>مستشارك
-          </h6>
-          <p>هو موقع ويب حول إنشاء دليل لأولئك الذين يبحثون عن نمط حياة صحية من خلال تقديم مجموعة من الخدمات الصحية
-          </p>
-        </div>
-        <!-- Grid column -->
-
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          
-          <p>
-            <a href="guest.html" class="text-reset">صفحة الضيف</a>
-          </p>
-          <p>
-            <a href="store.html" class="text-reset" >المتجر</a>
-          </p>
-          
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            تواصل معنا
-          </h6>
-          
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            contact@mostasharak.com
-          </p>
-          <p><i class="fas fa-phone me-3"> </i>9999 9999 9627+</p>
-          
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-   Mostasharak © 2022 
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
-<!--end section our footer-->
+<?php include "footer.php";?>
 </html>
 
 <?php
