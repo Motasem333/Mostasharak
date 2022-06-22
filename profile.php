@@ -1,3 +1,33 @@
+<?php
+session_start();
+if (!empty($_SESSION['email'])){
+$servername = "localhost";
+$username = "root";
+$pass = "";
+$database = "mktest";
+
+$conn = mysqli_connect($servername, $username, $pass,$database);
+if (!$conn) {
+die("Connection failed) ". mysqli_connect_error());
+}
+$email = $_SESSION['email'];
+$selectprofile = "select F_name,L_name,password,Email,age,phone_number,Wieght,Height from user where email='$email'";
+$runselectP  = mysqli_query($conn,$selectprofile);
+
+while($r = mysqli_fetch_assoc($runselectP)){
+    $fname =  $r['F_name'];
+    $lname =  $r['L_name'];
+    $password =  $r['password'];
+    $email = $r['Email'];
+    $w = $r['Wieght'];
+    $h = $r['Height'];
+    $age =  $r['age'];
+    $phone_number = $r['phone_number'];
+
+}
+?>
+
+
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -40,8 +70,9 @@
          </button>
          <div class="collapse navbar-collapse " id="main_nav">
          <ul class="items navbar-nav ms-auto">
-           <li class="nav-item active"> <a class="nav-link" href="Home.php">الصفحة الرئيسية </a> </li>
-  
+           <li class="nav-item active"> <a class="nav-link" href="main.php">الصفحة الرئيسية </a> </li>
+           <li class="nav-item active"> <a class="nav-link" href="logout.php"> خروج </a> </li>
+
          </ul>
         
          </div> <!-- navbar-collapse.// -->
@@ -62,14 +93,14 @@
                 <div class="head">
                     <h1>المعلومات الشخصية</h1>
                 </div>
-
+<form action="" method="POST">
                 <div class="edit_section" style="" >
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الاسم الاول : </label>
-                    <input type="text"  id="name" class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
-                    <button type="button"  class="btn btn-outline-success bg-white"  onclick="editName()">تعديل</button>
+                    <input type="text" name="fname" id="name" class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $fname;?>"/>
+                    <button type="button" name="fnamebtn" class="btn btn-outline-success bg-white"  onclick="editName()">تعديل</button>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh;">اسم العائلة : </label>
-                    <input type="text" id="Lname"  class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="text" id="Lname" name="lname" class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $lname;?>"/>
                     <button type="button" id="edit2" class="btn btn-outline-success bg-white" onclick="editL_Name()">تعديل</button>
 
 
@@ -77,20 +108,20 @@
 
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">كلمة السر  : </label>
-                    <input type="text"  id="pass" class="form-control rounded d-inline" style="width:26%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="text" name="password" id="pass" class="form-control rounded d-inline" style="width:26%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $password;?>"/>
                     <button type="button"  id="editpass" class="btn btn-outline-success bg-white"  onclick="editpass()">تعديل</button>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh;">البريد الالكتروني : </label>
-                    <input type="email" id="email"  class="form-control rounded d-inline" style="width:22%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="email" id="email" name="email" class="form-control rounded d-inline" style="width:22%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $email;?>"/>
                     <button type="button" id="editemail" class="btn btn-outline-success bg-white" onclick="editemail()">تعديل</button>
 
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">العمر :  </label>
-                    <input type="number" id="age"  class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="number" id="age"  name="age" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $age;?>"/>
                     <button type="button" id="edit3" class="btn btn-outline-success bg-white"  onclick="editAge()">تعديل</button>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">رقم الهاتف :  </label>
-                    <input type="tel"  id="tel" class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="tel"  id="tel" name="phone_number"class="form-control rounded d-inline" style="width:25%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $phone_number;?>"/>
                     <button type="button" id="edit4" class="btn btn-outline-success bg-white"  onclick="edittel()">تعديل</button>
 
                 </div>
@@ -100,24 +131,63 @@
                 <div class="edit_section">
                     
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الوزن :  </label>
-                    <input type="number" id="wieght" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="number" id="weight" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $w;?>"/>
                     <button type="button"  id="edit5" class="btn btn-outline-success bg-white" onclick="editWieght()">تعديل</button>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">الطول :  </label>
-                    <input type="number"  id="height" class="form-control rounded d-inline" style="width:28.5%"  disabled  aria-label="Search" aria-describedby="search-addon" value="احمد"/>
+                    <input type="number" name="hieght" id="height" class="form-control rounded d-inline" style="width:28.5%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $h;?>"/>
                     <button type="button" id="edit6"  class="btn btn-outline-success bg-white" onclick="editHeight()">تعديل</button>
                     
                 </div>
                 <div class="notes">
-                    <button type="button" id="edit6"  class="btn btn-outline-success btn-lg bg-white" >حفظ التغييرات </button>
+                    <button type="submit"  name="savechanges"  class="btn btn-outline-success btn-lg bg-white" >حفظ التغييرات </button>
                     <br><br>
                     <h4>  تعديل الوزن و الطول بشكل غير صحيح سوف يؤثر على جدولك الغذائي فتأكد من ادخال البيانات بطريقة صحيحة وحسب تقدمك في البرنامج </h4>
                 </div>
 
             </div>
         </div> 
-        
-        
+</form>
+<?php
+if (isset($_POST['savechanges'])){
+  if(isset($_POST['fname'])){
+  $fname = $_POST['fname'];
+  $updatefname = "UPDATE user set f_name= '$fname' where email='$email'";
+  $runupdatefname = mysqli_query($conn,$updatefname);
+}
+  if (isset($_POST['lname'])){
+  $lname = $_POST['lname'];
+  $updatelname = "UPDATE user set L_name= '$lname' where email='$email'";
+  $runupdatelname = mysqli_query($conn,$updatelname);
+}
+if (isset($_POST['email'])){
+  $email = $_POST['email'];
+  $updateemail = "UPDATE user set email= '$email' where email='$email'";
+  $runupdateemail= mysqli_query($conn,$updateemail);
+}
+if (isset($_POST['password'])){
+  $password = $_POST['password'];
+  $updatepassword = "UPDATE user set password= '$password' where email='$email'";
+  $runupdatepassword = mysqli_query($conn,$updatepassword);
+}
+if(isset($_POST['age'])){
+  $age = $_POST['age'];
+  $updateage = "UPDATE user set age= '$age' where email='$email'";
+  $runupdateage = mysqli_query($conn,$updateage);
+}
+  if (isset($_POST['weight'])){
+  $w = $_POST['weight'];
+  $updatew = "UPDATE user set   Wieght= '$w' where email='$email'";
+  $runupdatew = mysqli_query($conn,$updatew);
+}
+if (isset($_POST['hieght'])){
+  $h = $_POST['hieght'];
+  $updateh = "UPDATE user set height= '$h' where email='$email'";
+  $runupdateh = mysqli_query($conn,$updateh);
+}
+}
+
+?>
         <!--start section our footer-->
 <!-- Footer -->
 <footer class="footer text-center text-lg-start bg-dark text-muted" style="margin-top:10vh">
@@ -216,9 +286,18 @@
   </footer>
   <!-- Footer -->
   <!--end section our footer-->
-    
+
 </body>
-</html>
+</html
+<?php
+}
+else {
+    header("location:Home.php");
+}
+
+
+
+?>
 
 
 

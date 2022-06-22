@@ -38,7 +38,7 @@ $(this).prop('Counter',0).animate({
                 function done()
                 { 
                     Prp = parseInt(Prp)
-                    Prp+=parseInt(24)
+                    Prp+=parseInt(0)
                     document.getElementById("points").innerHTML = Prp
                     console.log(Prp);
                     Pr.style.width = Prp+'px';

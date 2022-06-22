@@ -80,6 +80,9 @@ else {
          <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">الصفحة الرئيسية </a> </li>
 		 <li class="nav-item active"> <a class="nav-link" href="store.html" style="color:white">المتجر </a> </li>
 		 <li class="nav-item active"> <a class="nav-link" href="exercises.html" style="color:white">التمارين </a> </li>
+     <li class="nav-item active"> <a class="nav-link" href="profile.php" style="color:white">المعلومات الشخصية </a> </li>
+     <li class="nav-item active"> <a class="nav-link" href="contact.php" style="color:white"> تواصل معنا </a> </li>
+
          <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
 
 
@@ -391,12 +394,12 @@ if (isset($_POST['roll'])) {
                               }
                               ?></h3>
                           </div>
-                         <!--<div class="points" id="points"></div>-->
+                          <!--<div class="points" id="points" style= "display:none;"></div>-->
                           <br><br>
                           <h5>-يتم الحصول على كود خصم بمقدار 25% عند انجاز 500 نقطة فأكثر</h5>
                           <h5>-يتم الحصول على هدية من اختيارك في حال الوصول الى 1000 نقطة في اقل من 50 يوم</h5>
                           <h5>-استخدم كود الهدية او الخصم في المتجر لتفعيلهما </h5>
-                          <button class="btn btn-outline-success btn-lg bg-white" id="Get1">طلب الحصول على خصم</button>
+                          <button type="submit"class="btn btn-outline-success btn-lg bg-white" id="Get1">طلب الحصول على خصم</button>
                           <button class="btn btn-outline-success btn-lg bg-white" id="Get0" style="pointer-events:none">XXXXXX </button>
                           <img src="img/cancel.png"  id="cancel"alt="">
                           <br><br>

@@ -89,8 +89,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
          </button>
          <div class="collapse navbar-collapse " id="main_nav">
          <ul class="items navbar-nav ms-auto">
-           <li class="nav-item active"> <a class="nav-link" href="Home.php">الصفحة الرئيسية </a> </li>
-  
+           <li class="nav-item active"> <a class="nav-link" href="main.php">الصفحة الرئيسية </a> </li>
+           <li class="nav-item active"> <a class="nav-link" href="logout.php">خروج  </a> </li>
+
          </ul>
         
          </div> <!-- navbar-collapse.// -->
@@ -109,10 +110,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 <div class="container">
         <div class="Sec1">
             <div class="head">
-                <h1>توصل معنا للأجابة عن الاستفسارات </h1>
+                <h1>تواصل معنا للأجابة عن الاستفسارات </h1>
                 <br>
                 <p>يمكنك ارسال ( اسألة , استفسارات , اقتراحات او شكاوى )</p>
-                <p>سوف يتم قراة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
+                <p>سوف يتم قراءة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
             </div>
             <br><br>
 			<form action="" method="POST">
