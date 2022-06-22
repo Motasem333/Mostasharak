@@ -90,7 +90,7 @@ body{
 
 .exercises .anterior{
     position: absolute;
-    top: 59%;
+    top: 60%;
     left: 44%;
     width: 90px;
     padding: 5px;
@@ -119,12 +119,26 @@ body{
 
 
 
-.tab-one , .tab-tow , .tab-three , .tab-four , .tab-five , .tab-six , .tab-seven , .tab-eight{
+.tab-one , .tab-tow , .tab-three , .tab-four , .tab-five , .tab-six , .tab-seven , .tab-eight, .tab-nine{
     position: absolute;
+    
 }
 
-.show-exercises img{
-    margin-right: 300px;
+
+
+.show-exercises p{
+    line-height:5vh;
+}
+
+
+
+.exercises .show-exercises ul{
+    margin-left: 200px;
+}
+
+.exercises .show-exercises h2{
+    padding: 20px;
+    
 }
 
 

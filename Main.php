@@ -25,7 +25,7 @@ else {
 	}
 	    $b = $c - ($c - 1);	
 
-	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset $c";
+	$select_data_user = "select meal_name,meal_pic,calories,meal_time from meal limit 3 offset 1";
 	$run_select = mysqli_query($conn,$select_data_user);
 	$run_num = mysqli_num_rows($run_select);
 
@@ -230,6 +230,7 @@ else if($result1['illnesses']=='النقرس'){?>
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 							 echo "<td> "."<b> فارغ </b>"."</td>";
 						}
+            
 	
 }
 else if($result1['illnesses']=='الضغط'){?>
