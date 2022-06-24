@@ -1,3 +1,5 @@
+
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -184,7 +186,7 @@ if (!empty($_SESSION['email'])){
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    كيف اختيار الجدول الغذائي
+                    كيف  يتم اختيار الجدول الغذائي
                     </button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">

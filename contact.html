@@ -1,3 +1,53 @@
+
+<?php
+$servername = "localhost";
+$username = "root";
+$pass = "";
+$database = "mktest";
+
+$conn = mysqli_connect($servername, $username, $pass,$database);
+if (!$conn) {
+die("Connection failed) ". mysqli_connect_error());
+}
+
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+	$user =filter_var($_POST['name'],FILTER_SANITIZE_STRING);
+	$email = filter_var( $_POST['email'],FILTER_SANITIZE_EMAIL);
+	$massage= filter_var($_POST['message'],FILTER_SANITIZE_STRING);
+	$usererror = ' ';
+	$messageError= ' ';
+	
+	
+	$formserror = array();
+	if(strlen($user)<0){
+		$formserror[]= 'user must be more than 10 char!!';
+		
+	}
+	if(strlen($massage)<0){
+		$formserror[]= 'message is too short!';	
+	}
+	
+	
+	if(empty($formserror)){
+		if(isset($_POST['send'])){
+		$_SESSION['sendcontact']= 'تم تسجيل ردك شكرا ! ' ;
+		$massage = "insert into contact_form values('$user','$email','$massage')";
+		$run_massage = mysqli_query($conn,$massage);		
+	}}
+
+
+
+
+
+
+
+}
+	
+
+
+?>
+
+
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -55,6 +105,7 @@
           <img src="img/logo.png" alt="">
           </div><h1>مستشارك</h1>
         </header>
+		<div style="center;"><?php if(isset($_SESSION['sendcontact'])){echo $_SESSION['sendcontact']; }?></div>
 <div class="container">
         <div class="Sec1">
             <div class="head">
@@ -64,15 +115,21 @@
                 <p>سوف يتم قراة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
             </div>
             <br><br>
+			<form action="" method="POST">
             <div class="form-group text-white" style="width:50% ; margin:auto">
+			   <label for="lname">البريد الألكتروني :  </label>
+               <input class="form-control" type="text" id="" name="email" placeholder="Your email.."> <br>
                 <label for="exampleFormControlTextarea3">الموضوع : </label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="1"></textarea>
+                <textarea class="form-control" name="name"id="exampleFormControlTextarea3" rows="1"></textarea>
                 <br>
                 <label for="exampleFormControlTextarea3">النص : </label>
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
+                <textarea class="form-control" name="message"id="exampleFormControlTextarea3" rows="7"></textarea>
                 <br>
-                <button class="btn btn-ouline-success bg-white text-success btn-lg"  > ارسال </button>
+               <button type="submit" class="btn btn-ouline-success bg-white text-success btn-lg" name="send" > ارسال </button>
+			
               </div>
+			  
+			  </form>
         </div>
 
         <div class="Sec1" style="height:auto ; margin-bottom: 10vh; padding-bottom:4vh" >
