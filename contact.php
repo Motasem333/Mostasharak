@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> b7d59b0174e2324362cb8f98f0529ba59c7a4808
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -92,14 +90,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
          </button>
          <div class="collapse navbar-collapse " id="main_nav">
          <ul class="items navbar-nav ms-auto">
-<<<<<<< HEAD
-           <li class="nav-item active"> <a class="nav-link" href="Home.php">الصفحة الرئيسية </a> </li>
-  
-=======
            <li class="nav-item active"> <a class="nav-link" href="main.php">الصفحة الرئيسية </a> </li>
            <li class="nav-item active"> <a class="nav-link" href="logout.php">خروج  </a> </li>
 
->>>>>>> b7d59b0174e2324362cb8f98f0529ba59c7a4808
          </ul>
         
          </div> <!-- navbar-collapse.// -->
@@ -118,17 +111,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 <div class="container">
         <div class="Sec1">
             <div class="head">
-<<<<<<< HEAD
-                <h1>توصل معنا للأجابة عن الاستفسارات </h1>
-                <br>
-                <p>يمكنك ارسال ( اسألة , استفسارات , اقتراحات او شكاوى )</p>
-                <p>سوف يتم قراة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
-=======
                 <h1>تواصل معنا للأجابة عن الاستفسارات </h1>
                 <br>
                 <p>يمكنك ارسال ( اسألة , استفسارات , اقتراحات او شكاوى )</p>
                 <p>سوف يتم قراءة استفسارك من قبل المختصين والاجابة عليه من خلال بريد الكتروني </p>
->>>>>>> b7d59b0174e2324362cb8f98f0529ba59c7a4808
             </div>
             <br><br>
 			<form action="" method="POST">
@@ -185,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    كيف اختيار الجدول الغذائي
+                    كيف  يتم اختيار الجدول الغذائي
                     </button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
