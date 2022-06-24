@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مستشارك | المتجر </title>
+    <title>Product Slider</title>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- fontawesome cdn -->
@@ -28,14 +27,20 @@
          </button>
          <div class="collapse navbar-collapse " id="main_nav">
          <ul class="items navbar-nav ms-auto">
-           <li class="nav-item active"> <a class="nav-link" href=".php" style="color:white">الصفحة الرئيسية </a> </li>
-           <li class="nav-item active"> <a class="nav-link" href="store.html" style="color:white">المتجر </a> </li>
-           <li class="nav-item active"> <a class="nav-link" href="exercises.html" style="color:white">التمارين </a> </li>
-       <li class="nav-item active"> <a class="nav-link" href="profile.php" style="color:white">المعلومات الشخصية </a> </li>
-       <li class="nav-item active"> <a class="nav-link" href="contact.php" style="color:white"> تواصل معنا </a> </li>
-  
-           <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
-  
+             <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">تسجيل دخول  </a> </li>
+             <li class="nav-item active"> <a class="nav-link" href="store.html" style="color:white">المتجر </a> </li>
+             <li class="nav-item active"> <a class="nav-link" href="contact.php" style="color:white"> تواصل معنا </a> </li>
+        <?php
+        session_start();
+        if (!empty($_SESSION['email'])){
+        ?>
+             <li class="nav-item active"> <a class="nav-link" href="Main.php" style="color:white">الصفحة الرئيسية </a> </li>
+             <li class="nav-item active"> <a class="nav-link" href="profile.php" style="color:white">المعلومات الشخصية </a> </li>
+             <li class="nav-item active"> <a class="nav-link" href="exercises.php" style="color:white">التمارين </a> </li>
+             <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
+     
+     <?php } ?>
+
   
          </ul>
         
@@ -122,9 +127,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">item 2</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -146,6 +149,7 @@
                     </div>
                 </div>
             </div>
+
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
                     <img class="shope-item-image" src = "img/dambbell2.jpg" alt = "" class = "img-fluid d-block mx-auto">
@@ -164,9 +168,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">item 3</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -207,9 +209,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Electronics & Accessories</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -250,9 +250,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Dambbel 10kg</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -293,9 +291,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Electronics & Accessories</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -392,9 +388,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">item 2</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -435,9 +429,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">item 3</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -478,9 +470,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Electronics & Accessories</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -521,9 +511,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Milk chocolate protin</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -564,9 +552,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Electronics & Accessories</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -608,7 +594,7 @@
         <div class = "row g-4 my-5 mx-auto owl-carousel owl-theme">
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
-                    <img src = "data:image/jpeg;base64,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" alt = "" class = "img-fluid d-block mx-auto">
+                    <img src = "img/cloth1.png" alt = "" class = "img-fluid d-block mx-auto">
                     <span class = "heart-icon">
                         <i class = "far fa-heart"></i>
                     </span>
@@ -654,7 +640,7 @@
 
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
-                    <img class="shope-item-image" src = "https://images-na.ssl-images-amazon.com/images/I/812p7X1FQpL._UX342_.jpg">
+                    <img class="shope-item-image" src = "img/cloth2.jpg" alt = "" class = "img-fluid d-block mx-auto">
                     <span class = "heart-icon">
                         <i class = "far fa-heart"></i>
                     </span>
@@ -670,9 +656,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">item 2</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -697,7 +681,7 @@
 
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
-                    <img class="shope-item-image" src = "https://th.bing.com/th/id/R.b4cb7468b9780ea13ea216f2b1dc4ee8?rik=e5JO2j1A39SX5Q&riu=http%3a%2f%2f2.bp.blogspot.com%2f-w2CPmrsM9Pg%2fU04uiFu4MCI%2fAAAAAAAAB0E%2fd1gdZK_QAMs%2fs1600%2f3626-006.jpg&ehk=fk5sB8z%2bH4pHEzsafTkaFO8oaW3fazfGKKLvxn%2fiOQc%3d&risl=&pid=ImgRaw&r=0">
+                    <img class="shope-item-image" src = "img/cloth3.jpg" alt = "" class = "img-fluid d-block mx-auto">
                     <span class = "heart-icon">
                         <i class = "far fa-heart"></i>
                     </span>
@@ -713,9 +697,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">item 3</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -740,7 +722,7 @@
 
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
-                    <img class="shope-item-image" src = "https://th.bing.com/th/id/OIP.l4ZLokAZAx6xvsAX-BVu_gAAAA?pid=ImgDet&rs=1" alt = "" class = "img-fluid d-block mx-auto">
+                    <img class="shope-item-image" src = "img/cloth4.jpg" alt = "" class = "img-fluid d-block mx-auto">
                     <span class = "heart-icon">
                         <i class = "far fa-heart"></i>
                     </span>
@@ -756,9 +738,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Adidas pajama</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -783,7 +763,7 @@
 
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
-                    <img class="shope-item-image" src = "https://th.bing.com/th/id/R.6e379ff1db81030975eba5970af405b4?rik=L7JiSdbUN1URng&riu=http%3a%2f%2fassets.academy.com%2fmgen%2f26%2f10641126.jpg&ehk=kr5vRXsTq6p9SJ2K6BD2%2fyx1AczXm%2bE7ID3sOaYnONg%3d&risl=&pid=ImgRaw&r=0" alt = "" class = "img-fluid d-block mx-auto">
+                    <img class="shope-item-image" src = "img/cloth2.jpg" alt = "" class = "img-fluid d-block mx-auto">
                     <span class = "heart-icon">
                         <i class = "far fa-heart"></i>
                     </span>
@@ -799,9 +779,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Adidas pajama</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 10.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -826,7 +804,7 @@
             
             <div class = "col product-item mx-auto">
                 <div class = "product-img">
-                    <img class="shope-item-image" src = "https://th.bing.com/th/id/OIP.XtEJQslWIwg603fPAv98GwHaHa?pid=ImgDet&rs=1" alt = "" class = "img-fluid d-block mx-auto">
+                    <img class="shope-item-image" src = "img/dambbell3.jpg" alt = "" class = "img-fluid d-block mx-auto">
                     <span class = "heart-icon">
                         <i class = "far fa-heart"></i>
                     </span>
@@ -842,9 +820,7 @@
 
                 <div class = "product-info p-3">
                     <span class = "product-type">Electronics & Accessories</span>
-                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">شكل سداسي مميز و فريد
-                        مقابض مصنوعه من الكروم مصمه خصيصا لراحة اليدين
-                        مصنوع من الحديد الصلب مغطي بطبقة من المطاط</a>
+                    <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">Apple - Apple Watch Series 3 White Sports Band</a>
                     <span class = "product-price">$ 100.50</span>
                     <div class = "rating d-flex mt-1">
                         <span>
@@ -879,7 +855,7 @@
     <section class="containerr content-section">
             <h2 class="section-header">السلة</h2>
             <div class="cart-row">
-                <span class="cart-item cart-header cart-column">المنتجج</span>
+                <span class="cart-item cart-header cart-column">المنتج</span>
                 <span class="cart-price cart-header cart-column">السعر</span>
                 <span class="cart-quantity cart-header cart-column">الكمية</span>
             </div>
@@ -887,10 +863,10 @@
                 
             </div>
             <div class="cart-total">
-                <strong class="cart-total-title">المجموعuع الكلي</strong>
+                <strong class="cart-total-title">المجموع الكلي</strong>
                 <span class="cart-total-price">$0</span>
             </div>
-            <button class="btn btn-primary btn-purchase" id="purchase" onclick type="button">شراء</button>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
 
 

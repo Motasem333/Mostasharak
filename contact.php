@@ -81,24 +81,38 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 <body>
     <div class="">
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container-fluid">
-         
-         
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
-             <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse " id="main_nav">
-         <ul class="items navbar-nav ms-auto">
-           <li class="nav-item active"> <a class="nav-link" href="main.php">الصفحة الرئيسية </a> </li>
-           <li class="nav-item active"> <a class="nav-link" href="logout.php">خروج  </a> </li>
+    <nav class="navbar navbar-expand-lg bg-dark  sticky-top ">
+      <div class="container-fluid">
+       
+       
+       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse " id="main_nav">
+       <ul class="items navbar-nav ms-auto">
+         <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white">تسجيل دخول  </a> </li>
+		 <li class="nav-item active"> <a class="nav-link" href="store.php" style="color:white">المتجر </a> </li>
+     <li class="nav-item active"> <a class="nav-link" href="contact.php" style="color:white"> تواصل معنا </a> </li>
+<?php
+session_start();
+if (!empty($_SESSION['email'])){
+?>
+      <li class="nav-item active"> <a class="nav-link" href="Main.php" style="color:white">الصفحة الرئيسية </a> </li>
 
-         </ul>
-        
-         </div> <!-- navbar-collapse.// -->
-         <img src="img/A.png" style="height:10vh">
-        </div> <!-- container-fluid.// -->
-       </nav>
+     <li class="nav-item active"> <a class="nav-link" href="profile.php" style="color:white">المعلومات الشخصية </a> </li>
+		 <li class="nav-item active"> <a class="nav-link" href="exercises.php" style="color:white">التمارين </a> </li>
+
+         <li class="nav-item active"> <a class="nav-link " href="logout.php" style="color:white;">خروج</a> </li>
+
+<?php
+}?>
+       </ul>
+      
+       </div> <!-- navbar-collapse.// -->
+       <img src="img/logoedit.png" style="height:10vh">
+      </div> <!-- container-fluid.// -->
+     </nav>
+   
         
         
         <header>
@@ -107,7 +121,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
           <img src="img/logo.png" alt="">
           </div><h1>مستشارك</h1>
         </header>
-		<div style="center;"><?php if(isset($_SESSION['sendcontact'])){echo $_SESSION['sendcontact']; }?></div>
+		<div style="center;">
+    <?php if(isset($_SESSION['sendcontact'])){echo $_SESSION['sendcontact']; }?></div>
 <div class="container">
         <div class="Sec1">
             <div class="head">
