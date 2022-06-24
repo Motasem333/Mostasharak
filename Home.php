@@ -142,7 +142,7 @@ session_start();
       
       <div class="col-lg-3">
         <div class="person wow animate__animated animate__bounceIn" data-wow-offset="450" data-wow-delay="2s">
-        <i class="fa-solid fa-user fa-4x"></i>
+        <i class="fa-solid fa-utensils fa-4x"></i>
           <div>
             <p class="pt-4">  توفير جدول غذائي للمستخدم حسب بياناته الشخصيه</p>
           </div>

@@ -500,7 +500,7 @@ step: function (now) {
                 <!-- counter -->
                 <div id="Icon_hover" class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated" data-wow-duration="1200ms" style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
                   <img src="img\day.svg"  style="width:20vh"  alt="">
-                     <span class="timer counter alt-font appear" data-to="100" data-speed="7000"><?php echo $b;
+                     <span class="timer counter alt-font appear" data-to="100" data-speed="7000"><?php echo $c;
 					 ?></span>
                     <span class="counter-title" style="font-size:2rem">   عدد الايام التي تم انجازها</span>
                 </div>
