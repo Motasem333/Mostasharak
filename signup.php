@@ -47,7 +47,11 @@ session_start();
        </button>
        <div class="collapse navbar-collapse " id="main_nav">
        <ul class="items navbar-nav ms-auto">
-         <li class="nav-item active"> <a class="nav-link" href="Home.php">الصفحة الرئيسية </a> </li>
+       <li class="nav-item active"> <a class="nav-link" href=" Guest.html" style="color:white">صفحة الضيف  </a> </li>
+         <li class="nav-item active"> <a class="nav-link" href="store.php" style="color:white">المتجر </a> </li>
+         <li class="nav-item active"> <a class="nav-link" href="contact.php" style="color:white"> تواصل معنا </a> </li>
+
+         <li class="nav-item active"> <a class="nav-link" href="Home.php" style="color:white"> تسجيل دخول </a> </li>
 
        </ul>
       

@@ -94,8 +94,7 @@ while($r = mysqli_fetch_assoc($runselectP)){
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh;">البريد الالكتروني : </label>
                     <input type="email" id="email" name="email" class="form-control rounded d-inline" style="width:22%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $email;?>"/>
-                    <button type="button" id="editemail" class="btn btn-outline-success bg-white" onclick="editemail1()">تعديل</button>
-
+<br>
 
                     <label for="" style=" margin-top: 5vh ; margin-right: 5vh; ">العمر :  </label>
                     <input type="number" id="age"  name="age" class="form-control rounded d-inline" style="width:30%"  disabled  aria-label="Search" aria-describedby="search-addon" value="<?php echo $age;?>"/>
@@ -143,7 +142,7 @@ if (isset($_POST['savechanges'])){
 }
 if (isset($_POST['email'])){
   $email = $_POST['email'];
-  $updateemail = "UPDATE user set email= '$email' where email='$email'";
+  $updateemail = "UPDATE user set email= '$email' where email= '$email'";
   $runupdateemail= mysqli_query($conn,$updateemail);
 }
 if (isset($_POST['password'])){
@@ -166,8 +165,12 @@ if (isset($_POST['hieght'])){
   $updateh = "UPDATE user set height= '$h' where email='$email'";
   $runupdateh = mysqli_query($conn,$updateh);
 }
-}
+?>
+<meta http-equiv="refresh" content="0; url=profile.php">
 
+
+<?php
+}
 include "footer.php";
 
 ?>   

@@ -62,7 +62,7 @@ session_start();
      </div>
 
 
-     <div class = "aboutus col-lg-4 pt-5 ">
+     <div class = "aboutus col-lg-5 pt-0 ">
      
      <!--<div class = "rtlp col-lg-8 pt-4 ">-->
      
@@ -235,9 +235,9 @@ session_start();
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            تواصل معنا
-          </h6>
+          <p>
+              <a href="contact.php" class="text-reset" > تواصل معنا</a>
+            </p>
           
           <p>
             <i class="fas fa-envelope me-3"></i>
