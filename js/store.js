@@ -146,7 +146,7 @@ document.getElementsByClassName('btn-purchase')[0].addEventListener('click', pur
 
 
 function purchaseClicked() {
-    alert('Thank you for your purchase')
+        location.href = 'payment.html';
     var cartItemss = document.getElementsByClassName('cart-items')[0]
     while(cartItemss.hasChildNodes()){
         cartItemss.removeChild(cartItemss.firstChild)
@@ -232,3 +232,6 @@ $(document).ready(function(){
        $(window).scrollTop(x+3000)
     });
 })
+
+
+
